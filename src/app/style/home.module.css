@@ -167,3 +167,68 @@ background: rgba(0, 0, 0, 0.037);
     gap: 21px;
     padding: 50px 0;
 }
+.chooseATopicBtn{
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 2px solid #526a6e;
+    padding: 16px;
+    margin-top: 19px;
+    width: fit-content;
+    gap: 15px;
+    color: rgba(0, 0, 0, 0.781);
+}
+.chooseATopicBtn:hover{
+    background: rgba(0, 0, 0, 0.037);
+}
+.threeBtnGroup{
+    display: flex;
+    flex-direction: column;
+    width: 425px;
+    margin-top: 23px;
+    gap: 16px;
+    font-size: large;
+}
+.threeBtnGroupBtn{
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    justify-content: space-between;
+    background: #e1dad097;
+  
+}
+.threeBtnGroupBtn:hover{
+    background:#E1DAD0 ;
+}
+.fullImage::after{
+    background-image: url('https://static.licdn.com/aero-v1/sc/h/4ezbw852t2wrgf27zl1o1qtu7');
+    content: '';
+    width: 100vw;
+    height: 900px;
+    /* right: 0; */
+    position: absolute;
+    /* display: block; */
+    z-index: -2;
+    top: 0;
+    
+}
+.fullImage{
+    position: relative;
+    /* display: inline-block; */
+   
+}
+
+ .footerContainer{
+    display: flex;
+    align-items: baseline;
+    padding: 20px;
+    gap: 126px;
+ }
+ .footerListLink{
+    color: rgba(0, 0, 0, 0.399);
+    text-decoration: none;
+ }
+ .footerListLink:hover{
+    text-decoration: underline;
+    color: rgba(0, 0, 255, 0.446);
+ }
