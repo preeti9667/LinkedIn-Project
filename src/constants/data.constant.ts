@@ -3,42 +3,49 @@ const DATA = {
         {
             id: 1,
             name: 'pukhraj saini',
+            email: 'pukhraj@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-13T08:47:09.183Z'
         },
         {
             id: 2,
             name: 'preeti saini',
+            email: 'preeti@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-13T08:47:09.183Z'
         },
         {
             id: 3,
             name: 'Aarti saini',
+            email: 'aarti@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
             id: 4,
             name: 'Bhupendra',
+            email: 'Bhupendra@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
             id: 5,
             name: 'vishember',
+            email: 'vishember@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
             id: 6,
             name: 'dayavati',
+            email: 'dayavati@gmail.com',
             position: 'Primary Teacher',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
             id: 7,
             name: 'Ratko',
+            email: 'ratko@gmail.com',
             position: 'Teacher',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
@@ -216,6 +223,7 @@ interface HomeFeedPostInterface {
 interface UserInterface {
     id: number,
     name: string,
+    email: string,
     position: string,
     createdAt: string
     followerCount?: number;
@@ -245,6 +253,13 @@ interface LikeInterface {
     createdAt: string
 }
 
+interface UserAuth {
+    success: boolean;
+    email: string;
+    message: string;
+    userId?: number;
+}
+
 export class DataStore {
     getHomeFeed(loggedInUserId: number): HomeFeedPostInterface[] {
         const feed: HomeFeedPostInterface[] = [];
@@ -252,6 +267,9 @@ export class DataStore {
             const user = DATA.users.find((user: UserInterface) => user.id === post.userId);
             const isLike = DATA.likes.some((e: LikeInterface) => e.postId === post.id && e.userId === loggedInUserId);
             const followers = DATA.connections.filter((con: ConnectionInterface) => con.userId === post.userId)
+
+
+
             const feedObj: HomeFeedPostInterface = {
                 id: post.id,
                 commentCount: post.commentCount,
@@ -273,9 +291,32 @@ export class DataStore {
         return feed;
     }
 
+
     userList(search: string): UserInterface[] {
-        return DATA.users.filter((user: UserInterface) =>user.name.toLowerCase().includes(search.toLowerCase()));
+        return DATA.users.filter((user: UserInterface) => user.name.toLowerCase().includes(search.toLowerCase()));
     }
+
+
+    userAuth(email: string): UserAuth {
+        const isExists = DATA.users.find((e: UserInterface) => e.email === email);
+        if (isExists) {
+            return {
+                message: 'Login Success',
+                success: true,
+                email,
+                userId: isExists.id,
+            }
+        } else {
+            return {
+                message: 'Login Failed',
+                success: false,
+                email
+            }
+        }
+
+    }
+
+
 }
 
 export const dataStore = new DataStore();

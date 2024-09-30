@@ -1,15 +1,8 @@
-
-
-import Navbar from "./components/Navbar";
-import HomeMain from "./components/HomeMain";
-import Footer from "./components/Footer";
+import Homes from "./home/page";
 export default function Home() {
   return (
     <div >
-     
-       <Navbar/>
-      <HomeMain/>
-      <Footer/>
+       <Homes/>
     </div>
   );
 }

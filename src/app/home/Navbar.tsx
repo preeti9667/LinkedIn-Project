@@ -11,7 +11,7 @@ import SlideshowIcon from '@mui/icons-material/Slideshow';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import Link from 'next/link';
-import style from '@/app/style/home.module.css'
+import style from '@/app/home/home.module.css'
 const Navbar = () => {
   return (
     <nav>
@@ -65,8 +65,8 @@ const Navbar = () => {
             </ol>
             <div className={style.nbBtn}>
                 <Button sx={{textTransform: 'none'}} className={style.nbBtnJo}>Join now</Button>
-                <Button variant='outlined'sx={{textTransform: 'none'}}
-                 className={style.nbBtnSi}>Sign in</Button>
+               <Link href='../login'> <Button variant='outlined'sx={{textTransform: 'none'}}
+                 className={style.nbBtnSi}>Sign in</Button></Link>
             </div>
         </div>
     </nav>

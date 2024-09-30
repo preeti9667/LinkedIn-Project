@@ -2,11 +2,12 @@
 
 import React from 'react'
 import Image from 'next/image'
-import style from '@/app/style/home.module.css'
+import style from '@/app/home/home.module.css'
 // import Link from 'next/link'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { Container,  Typography ,Link, Button} from '@mui/material'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Container,  Typography ,Link, Button,List,ListItem,} from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -37,7 +38,7 @@ export default function HomeMain() {
                   Cookie Policy</Link>.</p>
         </Box>
         <p  className={style.heroBtnFlexPp}>
-            New to LinkedIn
+            New to LinkedIn?
             <Link href=''  className={style.heroBtnFlexPLink} underline="none">join now</Link>
         </p>
         </Grid>
@@ -317,6 +318,113 @@ export default function HomeMain() {
               sx={{textTransform:'none', borderRadius:'20px',padding:'8px 24px', margin:"15px 0"}}>
               Get Started</Button></Link>
           </Box>
+          </Box>
+
+
+            <Box sx={{ background: '#F3F2F0', }}>
+        <Container className={style.footerContainer}>
+          <Box sx={{ display: 'flex', color: 'blue', alignItems: "center" }}>
+            <Typography variant='h5'>Linked</Typography>
+            <LinkedInIcon />
+          </Box>
+          <Box sx={{ display: 'flex', gap: '112px' }}>
+            <Box>
+              <Typography variant='h6'>General</Typography>
+              <List>
+                <ListItem sx={{ padding: '5px 0', }} >
+                  <Link href='' className={style.footerListLink}> Sign Up</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}> Help Center</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}> About</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Press</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>
+                    Blog</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Careers</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Developers</Link></ListItem></List>
+            </Box>
+
+            <Box>
+              <Typography variant='h6'>Browse LinkedIn</Typography>
+              <List>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Learning</Link></ListItem>
+
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Jobs</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Games</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Salary</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>
+                    Mobile</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Services</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Products</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Top Companies Hub</Link></ListItem></List>
+            </Box>
+
+            <Box>
+              <Typography variant='h6'>Business Solutions</Typography>
+              <List>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Talent</Link></ListItem>
+
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Marketing</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Sales</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Learning</Link></ListItem>
+              </List>
+            </Box>
+
+            <Box>
+              <Typography variant='h6'>Directories</Typography>
+              <List>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Members</Link></ListItem>
+
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Jobs</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Companies</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Featured</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>
+                    Learning</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Posts</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Articles</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Schools</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>News</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>News Letters</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Services</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Products</Link></ListItem>
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>Advice</Link>
+                  </ListItem>
+
+                <ListItem sx={{ padding: '5px 0', }}>
+                  <Link href='' className={style.footerListLink}>People Search</Link></ListItem></List>
+            </Box>
+
+          </Box>
+          </Container>
           </Box>
     </Box>
   )
