@@ -1,8 +1,12 @@
 "use client"
 
 // import { dataStore } from "@/constants/data.constant";
-import { Button } from "@mui/material";
-// import {useRouter} from 'next/navigation';
+
+
+
+import Navbar from "./Navbar";
+ 
+
 const Feed = () => {
 
     
@@ -15,15 +19,20 @@ const Feed = () => {
    
 // }
         
-    
+
     return (
    
         <>
-      
+      <Navbar/>
         <h1>Hello Feed is Here</h1>
-        <Button>Log out</Button>
+    
         </>
     )
 }
 
+
+  
+  
 export default Feed;
+
+  

@@ -1,18 +1,18 @@
 'use client'
-import { AppBar, Box,  Link, Toolbar, Typography,TextField,
-   Button, IconButton,InputAdornment,Snackbar } from '@mui/material'
+import { AppBar, Box,  Link, Toolbar, Typography,TextField, Snackbar,
+   Button, IconButton,InputAdornment,} from '@mui/material'
 import React,{useState} from 'react'
 import style from '@/app/login/logIn.module.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Field, Form, Formik ,ErrorMessage} from 'formik';
 import styled from '@/app/home/home.module.css'
 import Footer from './Footer';
-
+import { setCookie } from 'nookies';
 import * as Yup from 'yup';
 import {useRouter} from 'next/navigation';
 
 import { dataStore } from "@/constants/data.constant";
-import AutohideSnackbar from '@/utils/snackbar';
+// import AutohideSnackbar from '@/utils/snackbar';
 
 interface FormValue{
   email :string,
@@ -25,11 +25,14 @@ const validationSchema = Yup.object({
   
 })
 export default function Login() {
+
   const [showPassword, setShowPassword] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const [messages, setMessages] = useState('');
  const router = useRouter()
 
- const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState('');
+ 
  
 
  
@@ -40,17 +43,25 @@ export default function Login() {
    console.log(userAuthResponse)
   if(success){
     localStorage.setItem('loggedInUser',String(userId));
-    router.push('/feed');
-    AutohideSnackbar(message);
-    setMessage(message);
-      setOpen(true)
    
+  
+    setCookie(null, 'loggedInUser', String(userId), {
+    })
+
+    setMessages(message)
+    setOpen(true)
+     router.push('/feed')
+
   }
   else {
-    setMessage(message);
-    setOpen(true);
-  }
+
+    setMessages(message)
+      setOpen(true)
+    setTimeout(() => {
+      setOpen(false)
+    }, 1200);
    
+  }
  }
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -60,13 +71,14 @@ export default function Login() {
  
   const initialValues:FormValue={email:'', password :''}
 
+
   return (
     <Box>
-     <Snackbar
-        open={open}
-        autoHideDuration={3000}
-        message={message}
-      />
+    
+    <Snackbar open={open} message={messages}>
+       </Snackbar>
+
+
      <AppBar sx={{background:"white", boxShadow:'none'}} position="static">
       <Toolbar>
      <Link href='/' sx={{display:'flex', alignItems:"center",}} underline='none'> 
@@ -86,7 +98,7 @@ export default function Login() {
         >{({handleBlur,handleChange,errors,touched,})=>(
         <Form className={style.formInput} >
             <Field as={TextField} name='email' label="Email or Phone"
-            //  type='email'
+             type='email'
             onBlur={handleBlur} onChange={handleChange}
             error={touched.email && errors.email}
             helperText={<ErrorMessage name='email'/>}
