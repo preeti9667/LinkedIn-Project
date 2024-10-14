@@ -28,10 +28,41 @@
     font-size: x-small;
     color: #050505f2;
 }
-.nabLiTabMenu{
-    
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    top: 0;
+.GridItemLink{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 18px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.GridItemAvatar2{
+    background:#004E41;
+    width:90px;
+     height:90px;
+      font-size: -webkit-xxx-large;
+      margin: 20px;
+      border:  5px solid #8243CB;
+      position: inherit;
+}
+.GridItemAvatar{
+    background:#004E41;
+    margin-top:-28px;
+    width:65px;
+     height:65px;
+      border:2px solid white;
+      font-size:xx-large;
+      position: inherit;
+}
+.ItemBtnHiring{
+    text-transform: none;
+    border-radius: 20px;
+    padding: 5px 55px;
+    position: inherit;
+}
+.feedItemFooter{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 13px 23px;
+    gap: 13px;
 }

@@ -11,6 +11,7 @@ import { setCookie } from 'nookies';
 import * as Yup from 'yup';
 import {useRouter} from 'next/navigation';
 
+
 import { dataStore } from "@/constants/data.constant";
 // import AutohideSnackbar from '@/utils/snackbar';
 
@@ -31,35 +32,37 @@ export default function Login() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState('');
  const router = useRouter()
-
+ 
  
  
 
  
  const handleSubmit = (values:FormValue)=>{
-  console.log(values)
+  // console.log(values)
    const userAuthResponse = dataStore.userAuth(values.email);
    const {userId, success,message} = userAuthResponse;
-   console.log(userAuthResponse)
+  //  console.log(userAuthResponse)
   if(success){
-    localStorage.setItem('loggedInUser',String(userId));
+    // localStorage.setItem('loggedInUser',String(userId));
    
   
-    setCookie(null, 'loggedInUser', String(userId), {
+    setCookie(null, ('loggedInUser'), String(userId), {
+      // expires: 30
     })
 
     setMessages(message)
     setOpen(true)
      router.push('/feed')
-
-  }
-  else {
-
-    setMessages(message)
-      setOpen(true)
-    setTimeout(() => {
-      setOpen(false)
-    }, 1200);
+    
+     
+    }
+    else {
+    
+        setMessages(message)
+          setOpen(true)
+        setTimeout(() => {
+          setOpen(false)
+        }, 1200);
    
   }
  }
@@ -73,6 +76,8 @@ export default function Login() {
 
 
   return (
+    <>
+   
     <Box>
     
     <Snackbar open={open} message={messages}>
@@ -177,5 +182,6 @@ export default function Login() {
 </Box>
       <Footer/>
     </Box>
+    </>
   )
 }

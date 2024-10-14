@@ -13,7 +13,6 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppsIcon from '@mui/icons-material/Apps';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-
 import Cookies from 'nookies'
 import {useRouter} from 'next/navigation';
 
@@ -80,13 +79,13 @@ const handleClickBusniess =()=>{
 }
 const handleSignOut=()=>{
   
- Cookies.destroy(null, 'loggedInUser',)
+ Cookies.destroy(null, 'loggedInUser',{ expires: 0 })
       router.push('/login')
 }
 
   return (
-    <Box sx={{ flexGrow: 1 , }}>
-      <AppBar sx={{  position: 'sticky', top: '0', color: 'none',height:'59px',background:'white' }}>
+    <Box sx={{ flexGrow: 1 ,  position: 'sticky', top: '0' }}>
+      <AppBar sx={{  color: 'none',height:'59px',background:'white', }}>
         <Toolbar>
           <LinkedInIcon sx={{color:'#0A66C2', height:'44px', width:'44px'}} />
           <Search sx={{ color:'black', height:'32px' ,background:'#EDF3F8',
@@ -102,12 +101,12 @@ const handleSignOut=()=>{
           </Search>
           <ol className={style.feedNavLi}>
             <li>
-          <Tabs value={value} onChange={handleChange}  textColor="secondary"
+         <Tabs value={value} onChange={handleChange}  textColor="secondary"
         indicatorColor="secondary"      
           sx={{ height: '69px', marginTop: "-12px" }}>
             <Tab icon={<HomeIcon />} label='Home'
             className={style.feedNavTabsTab}  />
-            <Tab icon={<PeopleIcon/>} label='My Network'
+           <Tab icon={<PeopleIcon/>} label='My Network'
              className={style.feedNavTabsTab}
          />
             <Tab icon={<BusinessCenterIcon />} label='Job'
@@ -121,22 +120,22 @@ const handleSignOut=()=>{
           
             <li className={style.navLiSelect1}>
            <Avatar className={style.avatar}> P</Avatar>
-           <Button endIcon={<ArrowDropDownIcon  
-           sx={{marginLeft:'-10px',}}/>} className={style.nabLiBtn} onClick={handleClick}
+           <Button endIcon={<ArrowDropDownIcon  sx={{marginLeft:'-10px',}}/>}
+           className={style.nabLiBtn} onClick={handleClick}
              sx={{textTransform:'none',margin:'-3px','&:hover':{background:'inherit', boxShadow: 'none'}}}>
               Me
            </Button>
          
         </li>
            <Menu  open={open} onClose={handleClose}
-           sx={{ left:'inherit', right:'18rem', top:'-2rem',position:'absolute', width:'300px',}} >
+           sx={{ left:'inherit', right:'18rem', top:'-4rem',position:'absolute', width:'300px',}} >
         <Box sx={{width:'300px', height:'400px'}}>
         <Button onClick={handleSignOut}>Sign Out</Button></Box>
       </Menu>
 
            
          <Box sx={{border:"1px solid #00000030",height:'55px',}}></Box>
-
+              
               <li className={style.navLiSelect1}>
                 <AppsIcon sx={{color:'black'}}/>
                 <Button  endIcon={<ArrowDropDownIcon  sx={{marginLeft:'-10px',  }}/>} onClick={handleClickBusniess} 
@@ -148,7 +147,7 @@ const handleSignOut=()=>{
             
            
             <Menu  open={OpenBusiness} onClose={handleClose}  
-           sx={{ left:'inherit', right:'12rem', top:'-27px',position:'absolute', width:'700px', height:'482px' }} >
+           sx={{ left:'inherit', right:'12rem', top:'-5rem',position:'absolute', width:'700px', height:'482px' }} >
          <Box sx={{display:'flex', gap:'3px', width:'700px', height:'482px', overflow:'auto'}}>
             <Box sx={{border:"1px solid black"}}>hello</Box>
             <Box sx={{border:"1px solid black"}}>hello1</Box>
