@@ -66,3 +66,23 @@
     padding: 13px 23px;
     gap: 13px;
 }
+.searchTopBtn{
+    min-width: 30px;
+    padding: inherit;
+    height: 30px;
+    border-radius: 100%;
+    color: black;
+}
+.searchMinSearch{
+    align-items: center;
+    background: #EDF3F8;
+    margin: 10px 15px;
+    height: 31px;
+    box-shadow: none;
+    display: flex;
+}
+.postButton{
+    text-transform: none;
+    color: black;
+    position: inherit;
+}

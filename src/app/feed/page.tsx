@@ -1,21 +1,25 @@
 "use client"
 
 import Image from 'next/image'
-import { Avatar, Box, Button, Link, Typography,} from '@mui/material'
+import { Avatar, Box, Button, Link, Typography, } from '@mui/material'
 import React,{useState,useEffect} from 'react'
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
 import Layout from './Layout';
+import Search from './Search';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import RepeatOutlinedIcon from '@mui/icons-material/RepeatOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-
- 
-
+// import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import EditNoteIcon from '@mui/icons-material/EditNote';
+// import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+// import SearchIcon from '@mui/icons-material/Search';
+// import MenuIcon from '@mui/icons-material/Menu';
 
 import style from '@/app/feed/feed.module.css'
 const Item = styled(Paper)(({ theme }) => ({
@@ -35,6 +39,28 @@ import { dataStore } from "@/constants/data.constant";
 
 
 
+// interface TabPanelProps {
+//   children?: React.ReactNode;
+//   index: number;
+//   value: number;
+// }
+
+// function CustomTabPanel(props: TabPanelProps) {
+//   const { children, value, index, ...other } = props;
+
+//   return (
+//     <div
+//       role="tabpanel"
+//       hidden={value !== index}
+//       // id={`simple-tabpanel-${index}`}
+//       // aria-labelledby={`simple-tab-${index}`}
+//       {...other}
+//     >
+//       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+//     </div>
+//   );
+// }
+
 
 
 
@@ -42,7 +68,13 @@ import { dataStore } from "@/constants/data.constant";
 
 const Feed = () => {
 
+  
+  // const [value, setValue] = React.useState(0);
+  // const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  //   setValue(newValue);
+  // };
 const data = dataStore.getHomeFeed(2)
+
 
 
   // const users = dataStore.userList('');
@@ -51,7 +83,10 @@ const data = dataStore.getHomeFeed(2)
 
 
   // }
-
+  // const [openSearch, setOpenSearch] = useState(true)
+  // const handleClick =()=>{
+  //   setOpenSearch(!openSearch)
+  // }
   const [isFixed, setIsFixed] = useState(false);
 
   
@@ -160,13 +195,13 @@ const data = dataStore.getHomeFeed(2)
                     <Typography>{text.rePostCount}reposts</Typography></Box>
                   </Box><hr/>
                   <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-around', margin:'5px 0',}}>
-                    <Button sx={{textTransform:'none',color:'black'}}>
-                      <ThumbUpAltOutlinedIcon/>Like</Button>
-                    <Button sx={{textTransform:'none',color:'black'}}>
+                    <Button  className={style.postButton}>
+                      <ThumbUpAltOutlinedIcon  />Like</Button>
+                    <Button className={style.postButton}>
                       <CommentOutlinedIcon/>Comment</Button>
-                    <Button sx={{textTransform:'none',color:'black'}}>
+                    <Button className={style.postButton}>
                       <RepeatOutlinedIcon/>Repost</Button>
-                    <Button sx={{textTransform:'none',color:'black'}}>
+                    <Button className={style.postButton}>
                       <SendOutlinedIcon/>Send</Button></Box>
                   </Item>
                 ))}
@@ -228,9 +263,68 @@ const data = dataStore.getHomeFeed(2)
        
             </Grid>
           </Grid>
-<Item sx={{width:'300px' , position:'fixed', bottom:'0',right:'30px',height:'60px'}}>
 
-</Item>
+
+
+
+{/* <Item sx={{width:'300px' , position:'fixed', bottom:'-3px',right:'30px',
+   height: openSearch ? '430px':'50px', padding:'inherit'
+}}>
+  <Box sx={{display:'flex',alignItems:'center',  justifyContent:'space-between', padding:'10px'}}>
+  <Box sx={{display:'flex',alignItems:'center',gap:'2px'}}>
+<Avatar sx={{background:'#004E41', width:'30px', height:'30px',}}>P</Avatar>
+<Typography sx={{color:'black'}}>Messaging</Typography>
+</Box>
+<Box sx={{display:'flex',gap:'6px'}}>
+  <Button className={style.searchTopBtn}>
+    <MoreHorizIcon/>
+    </Button>
+  <Button className={style.searchTopBtn}>
+    <EditNoteIcon/>
+  </Button>
+  <Button className={style.searchTopBtn}  onClick={handleClick}>
+              {openSearch? <ExpandMoreIcon/> : <ExpandLessIcon/>}
+  </Button>
+
+</Box></Box>
+<hr/>
+<Paper className={style.searchMinSearch}>
+  <Typography >
+  <SearchIcon sx={{marginBottom:'-7px'}}/>
+  </Typography>
+  <InputBase
+   sx={{ ml: 1, flex: 1 }}
+   placeholder="Search messaging"
+   inputProps={{ 'aria-label': 'search google maps' }}/>
+<IconButton sx={{'&:hover':{background:'none'}}}>
+  <MenuIcon/>
+</IconButton>
+</Paper>
+
+<Box sx={{ width: '100%', typography: 'body1', marginTop:"25px",}}>
+      
+        <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
+          <Tabs onChange={handleChange}  value={value}>
+           <Tab label="Focused" value={0}  
+           sx={  {'&:hover':{background:'#0000000d'},
+            textTransform:'none',minHeight:'38px',minWidth:'150px'} }/>
+            <Tab label="Other" value={1} 
+            sx={{'&:hover':{background:'#0000000d'},textTransform:'none',minHeight:'38px',minWidth:'150px'}}/>
+           
+          </Tabs>
+        </Box>
+
+    </Box>
+          <CustomTabPanel value={value} index={0}>
+jdsk
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+sssss
+          </CustomTabPanel>
+       
+
+</Item> */}
+<Search/>
         </Box>
       </Layout>
 

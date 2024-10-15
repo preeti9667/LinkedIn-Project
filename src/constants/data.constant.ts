@@ -2,14 +2,14 @@ const DATA = {
     users: [
         {
             id: 1,
-            name: 'pukhraj saini',
+            name: 'Pukhraj saini',
             email: 'pukhraj@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-13T08:47:09.183Z'
         },
         {
             id: 2,
-            name: 'preeti saini',
+            name: 'Preeti saini',
             email: 'preeti@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-13T08:47:09.183Z'
@@ -30,14 +30,14 @@ const DATA = {
         },
         {
             id: 5,
-            name: 'vishember',
+            name: 'Vishember',
             email: 'vishember@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
             id: 6,
-            name: 'dayavati',
+            name: 'Dayavati',
             email: 'dayavati@gmail.com',
             position: 'Primary Teacher',
             createdAt: '2024-09-15T08:47:09.183Z'
