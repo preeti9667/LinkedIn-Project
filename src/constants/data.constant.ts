@@ -17,7 +17,7 @@ const DATA = {
         {
             id: 3,
             name: 'Aarti saini',
-            email: 'aarti@gmail.com',
+            email: 'Aarti@gmail.com',
             position: 'Software Engineer',
             createdAt: '2024-09-15T08:47:09.183Z'
         },
