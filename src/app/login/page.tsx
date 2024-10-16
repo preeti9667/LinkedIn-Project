@@ -43,7 +43,8 @@ export default function Login() {
    const {userId, success,message} = userAuthResponse;
   //  console.log(userAuthResponse)
   if(success){
-    // localStorage.setItem('loggedInUser',String(userId));
+
+    localStorage.setItem('loggedInUser',String(userId));
    
   
     setCookie(null, ('loggedInUser'), String(userId), {

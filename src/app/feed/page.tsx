@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Avatar, Box, Button, Link, Typography, } from '@mui/material'
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
@@ -14,12 +14,7 @@ import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import RepeatOutlinedIcon from '@mui/icons-material/RepeatOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-// import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import EditNoteIcon from '@mui/icons-material/EditNote';
-// import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-// import SearchIcon from '@mui/icons-material/Search';
-// import MenuIcon from '@mui/icons-material/Menu';
+
 
 import style from '@/app/feed/feed.module.css'
 const Item = styled(Paper)(({ theme }) => ({
@@ -35,61 +30,35 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
+
 import { dataStore } from "@/constants/data.constant";
-
-
-
-// interface TabPanelProps {
-//   children?: React.ReactNode;
-//   index: number;
-//   value: number;
-// }
-
-// function CustomTabPanel(props: TabPanelProps) {
-//   const { children, value, index, ...other } = props;
-
-//   return (
-//     <div
-//       role="tabpanel"
-//       hidden={value !== index}
-//       // id={`simple-tabpanel-${index}`}
-//       // aria-labelledby={`simple-tab-${index}`}
-//       {...other}
-//     >
-//       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-//     </div>
-//   );
-// }
-
-
-
-
-
 
 const Feed = () => {
 
+  // const [formData, setFormData] = useState({id:''});
+
+  // console.log(formData.id)
+
+  // useEffect(() => {
+   
+  //   const savedData = localStorage.getItem('loggedInUser',);
+  //   if (savedData) {
+  //     setFormData(JSON.parse(savedData));
+
+  //   }
+  // }, []);
+
+
+  const data = dataStore.getHomeFeed(2)
+
+  const user = dataStore.userAuth('2')
   
-  // const [value, setValue] = React.useState(0);
-  // const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-  //   setValue(newValue);
-  // };
-const data = dataStore.getHomeFeed(2)
+console.log(user.userId)
+ 
 
-
-
-  // const users = dataStore.userList('');
-  // console.log("User list", users);
-
-
-
-  // }
-  // const [openSearch, setOpenSearch] = useState(true)
-  // const handleClick =()=>{
-  //   setOpenSearch(!openSearch)
-  // }
   const [isFixed, setIsFixed] = useState(false);
 
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -110,10 +79,10 @@ const data = dataStore.getHomeFeed(2)
 
   return (
     <>
-    
+
       <Layout>
         <Box sx={{ flexGrow: 1, }}>
-        
+
           <Grid container gap={3} sx={{ margin: '0 5rem' }}>
             <Grid size={2.5} sx={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <Item sx={{ padding: 'inherit' }}>
@@ -121,12 +90,14 @@ const data = dataStore.getHomeFeed(2)
                   <Box sx={{ background: '#BFD3D6', borderRadius: '5px', height: '55px' }}>
                   </Box>
                   <Avatar className={style.GridItemAvatar}>P</Avatar>
-                    {data.map((text,index)=>(
-                      <Box key={index}>
-                        {/* <Typography>{text.user.name}</Typography> */}
-                         {/* <Typography>{text.user.position}</Typography> */}
-                      </Box>
-                    ))}
+                  {data.map((text, index) => (
+                    <Box key={index}>
+                    
+                      {/* <Typography>{text.user.id}</Typography> */}
+                      {/* <Typography>{text.user.position}</Typography> */}
+
+                    </Box>
+                  ))}
                   <Typography>name</Typography>
                   <Typography>work</Typography>
 
@@ -157,8 +128,6 @@ const data = dataStore.getHomeFeed(2)
                 <hr />
                 <Button sx={{ width: '100%', color: 'black', position: 'inherit' }}>Discover more</Button>
               </Item>
-           
-            
             </Grid>
 
 
@@ -176,43 +145,40 @@ const data = dataStore.getHomeFeed(2)
                   <Button variant="outlined" className={style.ItemBtnHiring}>
                     No not right now</Button>
                 </Box>
-               
+
               </Item>
-              <Box sx={{display:'flex', flexDirection:'column', gap:'10px'}}>
-                {data.map((text,index)=>(
-                  <Item key={index} sx={{textAlign:'inherit'}}>
-                 
-                  <Typography>{text.user.followerCount}</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {data.map((text, index) => (
+                  <Item key={index} sx={{ textAlign: 'inherit' }}>
+
+                    <Typography>{text.user.followerCount}</Typography>
                     <Typography>{text.createdAt}</Typography>
                     <Typography>{text.content}</Typography>
 
                     <Image src={text.url}
-            alt='' width={500} height={300}/>
-                      <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+                      alt='' width={500} height={300} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <Typography>{text.likeCount}</Typography>
-                   <Box sx={{display:"flex"}}>
-                    <Typography>{text.commentCount}comments.</Typography>
-                    <Typography>{text.rePostCount}reposts</Typography></Box>
-                  </Box><hr/>
-                  <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-around', margin:'5px 0',}}>
-                    <Button  className={style.postButton}>
-                      <ThumbUpAltOutlinedIcon  />Like</Button>
-                    <Button className={style.postButton}>
-                      <CommentOutlinedIcon/>Comment</Button>
-                    <Button className={style.postButton}>
-                      <RepeatOutlinedIcon/>Repost</Button>
-                    <Button className={style.postButton}>
-                      <SendOutlinedIcon/>Send</Button></Box>
+                      <Box sx={{ display: "flex" }}>
+                        <Typography>{text.commentCount}comments.</Typography>
+                        <Typography>{text.rePostCount}reposts</Typography></Box>
+                    </Box><hr />
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', margin: '5px 0', }}>
+                      <Button className={style.postButton}>
+                        <ThumbUpAltOutlinedIcon />Like</Button>
+                      <Button className={style.postButton}>
+                        <CommentOutlinedIcon />Comment</Button>
+                      <Button className={style.postButton}>
+                        <RepeatOutlinedIcon />Repost</Button>
+                      <Button className={style.postButton}>
+                        <SendOutlinedIcon />Send</Button></Box>
                   </Item>
                 ))}
               </Box>
-              {/* <Item></Item> */}
+       
             </Grid>
 
-
-
-
-            <Grid size={3.2} sx={{ display: 'flex', flexDirection: 'column', gap: '8px',position:'static' }}>
+            <Grid size={3.2} sx={{ display: 'flex', flexDirection: 'column', gap: '8px', position: 'static' }}>
               <Item sx={{ textAlign: 'start' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '12px' }}>
                   <Typography>LinkedIn News</Typography>
@@ -229,12 +195,13 @@ const data = dataStore.getHomeFeed(2)
                   <Typography>Crossclimb</Typography>
                 </Box>
               </Item>
-            
-              <Box sx={{ position: isFixed ? 'fixed' : 'relative',
+
+              <Box sx={{
+                position: isFixed ? 'fixed' : 'relative',
                 bottom: isFixed ? '40px' : 'auto',
-                width: '294px', 
+                width: '294px',
               }}>
-                <Item sx={{ padding: 'inherit', textAlign: 'start',}}>
+                <Item sx={{ padding: 'inherit', textAlign: 'start', }}>
                   <Box sx={{ background: '#BFD3D6', width: '100%', height: '60px' }}></Box>
                   <Box sx={{ padding: '10px', }}>
                     <Typography sx={{ color: "black" }}>aramco</Typography>
@@ -260,71 +227,10 @@ const data = dataStore.getHomeFeed(2)
 
                 </footer>
               </Box>
-       
+
             </Grid>
           </Grid>
-
-
-
-
-{/* <Item sx={{width:'300px' , position:'fixed', bottom:'-3px',right:'30px',
-   height: openSearch ? '430px':'50px', padding:'inherit'
-}}>
-  <Box sx={{display:'flex',alignItems:'center',  justifyContent:'space-between', padding:'10px'}}>
-  <Box sx={{display:'flex',alignItems:'center',gap:'2px'}}>
-<Avatar sx={{background:'#004E41', width:'30px', height:'30px',}}>P</Avatar>
-<Typography sx={{color:'black'}}>Messaging</Typography>
-</Box>
-<Box sx={{display:'flex',gap:'6px'}}>
-  <Button className={style.searchTopBtn}>
-    <MoreHorizIcon/>
-    </Button>
-  <Button className={style.searchTopBtn}>
-    <EditNoteIcon/>
-  </Button>
-  <Button className={style.searchTopBtn}  onClick={handleClick}>
-              {openSearch? <ExpandMoreIcon/> : <ExpandLessIcon/>}
-  </Button>
-
-</Box></Box>
-<hr/>
-<Paper className={style.searchMinSearch}>
-  <Typography >
-  <SearchIcon sx={{marginBottom:'-7px'}}/>
-  </Typography>
-  <InputBase
-   sx={{ ml: 1, flex: 1 }}
-   placeholder="Search messaging"
-   inputProps={{ 'aria-label': 'search google maps' }}/>
-<IconButton sx={{'&:hover':{background:'none'}}}>
-  <MenuIcon/>
-</IconButton>
-</Paper>
-
-<Box sx={{ width: '100%', typography: 'body1', marginTop:"25px",}}>
-      
-        <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
-          <Tabs onChange={handleChange}  value={value}>
-           <Tab label="Focused" value={0}  
-           sx={  {'&:hover':{background:'#0000000d'},
-            textTransform:'none',minHeight:'38px',minWidth:'150px'} }/>
-            <Tab label="Other" value={1} 
-            sx={{'&:hover':{background:'#0000000d'},textTransform:'none',minHeight:'38px',minWidth:'150px'}}/>
-           
-          </Tabs>
-        </Box>
-
-    </Box>
-          <CustomTabPanel value={value} index={0}>
-jdsk
-          </CustomTabPanel>
-          <CustomTabPanel value={value} index={1}>
-sssss
-          </CustomTabPanel>
-       
-
-</Item> */}
-<Search/>
+          <Search />
         </Box>
       </Layout>
 
@@ -332,11 +238,4 @@ sssss
     </>
   )
 }
-
-
-
-
 export default Feed;
-
-
- 
