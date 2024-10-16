@@ -309,9 +309,9 @@ export class DataStore {
         return DATA.users.filter((user: UserInterface) => user.name.toLowerCase().includes(search.toLowerCase()));
     }
 
-    // users(id: number){
-    //     return DATA.users.find((e:UserInterface)=> e.id === id)
-    // }
+    users(id: number){
+        return DATA.users.find((e:UserInterface)=> e.id === id)
+    }
        
 
     userAuth(email: string): UserAuth {

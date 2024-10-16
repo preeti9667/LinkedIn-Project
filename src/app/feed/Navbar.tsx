@@ -43,7 +43,8 @@ const Navbar = () => {
   }
   const handleSignOut = () => {
 
-    Cookies.destroy(null, 'loggedInUser', { expires: 0 })
+    Cookies.destroy(null, 'loggedInUser')
+    localStorage.removeItem('loggedInUser')
     router.push('/login')
   }
 

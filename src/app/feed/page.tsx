@@ -33,27 +33,35 @@ const Item = styled(Paper)(({ theme }) => ({
 
 import { dataStore } from "@/constants/data.constant";
 
+import nookies from 'nookies';
+
 const Feed = () => {
 
-  // const [formData, setFormData] = useState({id:''});
 
-  // console.log(formData.id)
 
-  // useEffect(() => {
-   
-  //   const savedData = localStorage.getItem('loggedInUser',);
-  //   if (savedData) {
-  //     setFormData(JSON.parse(savedData));
 
-  //   }
-  // }, []);
+  
+
+  const [userId, setUserId] = useState('');
+
+  useEffect(() => {
+    
+    const cookies = nookies.get(null);
+    if (cookies.loggedInUser) {
+      setUserId(cookies.loggedInUser);
+    }
+  }, []);
+
+  const loginUser = Number(userId)
+  const user = dataStore.users(loginUser)
+  
+ 
+
 
 
   const data = dataStore.getHomeFeed(2)
 
-  const user = dataStore.userAuth('2')
   
-console.log(user.userId)
  
 
   const [isFixed, setIsFixed] = useState(false);
@@ -89,17 +97,9 @@ console.log(user.userId)
                 <Box sx={{ textAlign: '-webkit-center' }}>
                   <Box sx={{ background: '#BFD3D6', borderRadius: '5px', height: '55px' }}>
                   </Box>
-                  <Avatar className={style.GridItemAvatar}>P</Avatar>
-                  {data.map((text, index) => (
-                    <Box key={index}>
-                    
-                      {/* <Typography>{text.user.id}</Typography> */}
-                      {/* <Typography>{text.user.position}</Typography> */}
-
-                    </Box>
-                  ))}
-                  <Typography>name</Typography>
-                  <Typography>work</Typography>
+                  <Avatar className={style.GridItemAvatar}>{user?.name[0]}</Avatar>
+                  <Typography>{user?.name}</Typography>
+                  <Typography>{user?.position}</Typography>
 
                 </Box>
                 <hr />
@@ -134,8 +134,8 @@ console.log(user.userId)
             <Grid size={5.6} sx={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <Item>
                 <Box sx={{ textAlign: '-webkit-center' }}>
-                  <Avatar className={style.GridItemAvatar2}>P</Avatar>
-                  <Typography variant='h6'>Hi Preeti, are you hiring? </Typography>
+                  <Avatar className={style.GridItemAvatar2}>{user?.name[0]}</Avatar>
+                  <Typography variant='h6'>Hi {user?.name.substring(0, 8)}, are you hiring? </Typography>
                   <Typography variant='body1' sx={{ color: '#00000069' }}>
                     Discover free and easy ways to find a great hire, fast. </Typography>
                 </Box>
