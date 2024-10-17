@@ -2,7 +2,7 @@
 
 const nextConfig = {
     images:{
-        domains:["img.freepik.com","static.licdn.com",]
+        domains:["img.freepik.com","cdn-icons-png.freepik.com", "static.licdn.com",]
 
     }
 };

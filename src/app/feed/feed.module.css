@@ -86,3 +86,9 @@
     color: black;
     position: inherit;
 }
+.postButtonLiked{
+    text-transform: none;
+    color: #3939ba79;
+    position: inherit;
+  
+}

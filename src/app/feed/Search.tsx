@@ -116,15 +116,15 @@ export default function Search() {
 
     </Box>
           <CustomTabPanel value={value} index={0}>
+        
             {filteredUsers.map((test, index)=>(
-                <Box key={index} >
-                   {searchList && (
+                <Box key={index}>
                     <Box sx={{display:'flex', alignItems:'center', gap:"15px", padding:'5px 0'}} >
                         <Avatar sx={{background:'#004E41',width:'30px',height:'30px'}}>
                             {test.name[0]}</Avatar>
                         <Typography> { test.name}</Typography>
                     </Box>
-                   )}
+                
                    
                 </Box>
             ))}

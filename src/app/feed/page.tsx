@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Avatar, Box, Button, Link, Typography, } from '@mui/material'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, } from 'react'
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
@@ -10,11 +10,12 @@ import Layout from './Layout';
 import Search from './Search';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import RepeatOutlinedIcon from '@mui/icons-material/RepeatOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-
+import moment from 'moment';
+import PublicIcon from '@mui/icons-material/Public';
 
 import style from '@/app/feed/feed.module.css'
 const Item = styled(Paper)(({ theme }) => ({
@@ -31,21 +32,16 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 
-import { dataStore } from "@/constants/data.constant";
+import { dataStore, HomeFeedPostInterface } from "@/constants/data.constant";
 
 import nookies from 'nookies';
 
 const Feed = () => {
 
-
-
-
-  
-
   const [userId, setUserId] = useState('');
 
   useEffect(() => {
-    
+
     const cookies = nookies.get(null);
     if (cookies.loggedInUser) {
       setUserId(cookies.loggedInUser);
@@ -54,19 +50,35 @@ const Feed = () => {
 
   const loginUser = Number(userId)
   const user = dataStore.users(loginUser)
-  
- 
 
 
 
-  const data = dataStore.getHomeFeed(2)
 
-  
- 
+
+  const data = dataStore.getHomeFeed(1)
+
+  const [feedData, setFeedData] = useState(data)
+
+  const handleLikeClick = (item: HomeFeedPostInterface) => {
+    setFeedData(feedData.map((text: HomeFeedPostInterface) => {
+      if (text.id === item.id) {
+        text.isLike = !text.isLike;
+
+        if (text.isLike) {
+          text.likeCount = text.likeCount + 1
+        }
+        else {
+          text.likeCount = text.likeCount - 1
+        }
+
+      }
+      return text
+    }))
+  }
+
+
 
   const [isFixed, setIsFixed] = useState(false);
-
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -148,24 +160,43 @@ const Feed = () => {
 
               </Item>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {data.map((text, index) => (
+                {feedData.map((text, index) => (
                   <Item key={index} sx={{ textAlign: 'inherit' }}>
+                    <Box sx={{display:'flex', gap:"15px", padding:'15px 0'}}>
+                    <Image src='https://img.freepik.com/premium-vector/p-logo-design_877718-2407.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+                   width={50} height={50} alt='' />
+                   <Box>
+                   <Typography color='black'>{text.user.name}</Typography>
+                    <Typography  variant='body2'>{text.user.followerCount} Followers</Typography>
 
-                    <Typography>{text.user.followerCount}</Typography>
-                    <Typography>{text.createdAt}</Typography>
-                    <Typography>{text.content}</Typography>
+                    <Typography variant='body2' sx={{display:'flex', alignItems:'center',gap:'8px'}}>
+                      {moment(text.createdAt).fromNow()}
+                       <PublicIcon sx={{width:"20px", height:'20px'}}/></Typography>
+                       </Box></Box>
 
+                    <Typography>{text.content} </Typography>
+                 
                     <Image src={text.url}
                       alt='' width={500} height={300} />
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <Typography>{text.likeCount}</Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin:'8px 0' }}>
+                     
+                      <Typography sx={{display:'flex', alignItems:'center', gap:'5px'}}> 
+                        <Image src='https://cdn-icons-png.freepik.com/256/12083/12083167.png?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+                        height={20} width={20} alt=''/>
+                        {text.likeCount}</Typography>
+
+
                       <Box sx={{ display: "flex" }}>
                         <Typography>{text.commentCount}comments.</Typography>
                         <Typography>{text.rePostCount}reposts</Typography></Box>
                     </Box><hr />
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', margin: '5px 0', }}>
-                      <Button className={style.postButton}>
-                        <ThumbUpAltOutlinedIcon />Like</Button>
+
+                      <Button onClick={() => handleLikeClick(text)}
+                        className={text.isLike ? style.postButtonLiked : style.postButton}>
+                        <ThumbUpIcon/>Like</Button>
+
+
                       <Button className={style.postButton}>
                         <CommentOutlinedIcon />Comment</Button>
                       <Button className={style.postButton}>
@@ -175,7 +206,7 @@ const Feed = () => {
                   </Item>
                 ))}
               </Box>
-       
+
             </Grid>
 
             <Grid size={3.2} sx={{ display: 'flex', flexDirection: 'column', gap: '8px', position: 'static' }}>

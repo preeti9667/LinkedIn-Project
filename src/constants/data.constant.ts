@@ -146,7 +146,7 @@ const DATA = {
         {
             id: 7,
             userId: 4,
-            createdAt: '2024-09-15T08:47:09.183Z',
+            createdAt: '2024-10-15T08:47:09.183Z',
             content: 'If you’re looking for that perfect opportunity to make it big, your search ends right her',
             likeCount: 200,
             commentCount: 20,
@@ -156,7 +156,7 @@ const DATA = {
         {
             id: 8,
             userId: 4,
-            createdAt: '2024-09-15T08:47:09.183Z',
+            createdAt: '2024-10-17T08:47:09.183Z',
             content: 'If you’re looking for that perfect opportunity to make it big, your search ends right her',
             likeCount: 200,
             commentCount: 20,
@@ -166,7 +166,7 @@ const DATA = {
         {
             id: 9,
             userId: 3,
-            createdAt: '2024-09-15T08:47:09.183Z',
+            createdAt: '2024-09-14T08:47:09.183Z',
             content: 'If you’re looking for that perfect opportunity to make it big, your search ends right her',
             likeCount: 200,
             commentCount: 20,
@@ -176,7 +176,7 @@ const DATA = {
         {
             id: 10,
             userId: 3,
-            createdAt: '2024-09-15T08:47:09.183Z',
+            createdAt: '2024-09-19T08:47:09.183Z',
             content: 'If you’re looking for that perfect opportunity to make it big, your search ends right her',
             likeCount: 110,
             commentCount: 21,
@@ -213,7 +213,7 @@ const DATA = {
 
 }
 
-interface HomeFeedPostInterface {
+ export interface  HomeFeedPostInterface {
     id: number;
     url: string;
     content: string;
@@ -276,9 +276,13 @@ export class DataStore {
     getHomeFeed(loggedInUserId: number): HomeFeedPostInterface[] {
         const feed: HomeFeedPostInterface[] = [];
         DATA.posts.forEach((post: PostInterface) => {
+           
             const user = DATA.users.find((user: UserInterface) => user.id === post.userId);
+           
             const isLike = DATA.likes.some((e: LikeInterface) => e.postId === post.id && e.userId === loggedInUserId);
+           
             const followers = DATA.connections.filter((con: ConnectionInterface) => con.userId === post.userId)
+           
 
 
 
