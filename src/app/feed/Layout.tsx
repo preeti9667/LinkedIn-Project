@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 // import "./globals.css";
 import { Box } from "@mui/material";
 import Navbar from "./Navbar";
-
+import Search from "./Search";
 
 
 export default function Layout({
@@ -14,10 +14,12 @@ export default function Layout({
 }>) {
   return (
     
-    <Box sx={{background:'#F4F2EE',}}>
+    <Box sx={{background:'#F4F2EE', width:'100%', }}>
     <Navbar/>
-  <Box sx={{paddingTop:'80px',}}>
+  <Box sx={{paddingTop:'80px', }}>
+    <Search/>
     {children}
+
    </Box>
   </Box>
 

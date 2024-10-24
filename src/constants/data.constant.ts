@@ -66,7 +66,7 @@ const DATA = {
         {
             id: 3,
             userId: 4,
-            connectedTo: 2,
+            connectedTo: 1,
             createdAt: '2024-09-15T08:47:09.183Z'
         },
         {
@@ -77,7 +77,7 @@ const DATA = {
         },
         {
             id: 5,
-            userId: 2,
+            userId: 1,
             connectedTo: 5,
             createdAt: '2024-09-15T08:47:09.183Z'
         },
@@ -101,7 +101,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-photo/gandhi-jayanti_706452-33872.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/premium-photo/gandhi-jayanti_706452-33872.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
         {
             id: 3,
@@ -111,7 +111,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-vector/man-hugging-his-dog_1198035-2272.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/premium-vector/man-hugging-his-dog_1198035-2272.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
         {
             id: 4,
@@ -121,7 +121,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-vector/frame-with-flower-vector-illustration_1253202-306222.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/premium-vector/frame-with-flower-vector-illustration_1253202-306222.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
         {
             id: 5,
@@ -131,7 +131,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/free-vector/dog-standing-white-background_1308-108711.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/free-vector/dog-standing-white-background_1308-108711.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
         {
             id: 6,
@@ -141,7 +141,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-photo/goddess-durga-jai-mata-di_1037680-8530.jpg?ga=GA1.1.2107727690.1726806487'
+            url: 'https://img.freepik.com/premium-photo/goddess-durga-jai-mata-di_1037680-8530.jpg?ga=GA1.1.2107727690.1726806487'
         },
         {
             id: 7,
@@ -151,7 +151,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/free-photo/boat-lake_181624-226.jpg?ga=GA1.1.2107727690.1726806487'
+            url: 'https://img.freepik.com/free-photo/boat-lake_181624-226.jpg?ga=GA1.1.2107727690.1726806487'
         },
         {
             id: 8,
@@ -161,7 +161,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-photo/statue-god-with-blue-face-gold-ring-around-it_1092575-35141.jpg?ga=GA1.1.2107727690.1726806487'
+            url: 'https://img.freepik.com/premium-photo/statue-god-with-blue-face-gold-ring-around-it_1092575-35141.jpg?ga=GA1.1.2107727690.1726806487'
         },
         {
             id: 9,
@@ -171,7 +171,7 @@ const DATA = {
             likeCount: 200,
             commentCount: 20,
             rePostCount: 20,
-            url:'https://img.freepik.com/premium-photo/painting-religious-man-with-large-white-beard-large-white-beard_1050053-3788.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/premium-photo/painting-religious-man-with-large-white-beard-large-white-beard_1050053-3788.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
         {
             id: 10,
@@ -181,7 +181,7 @@ const DATA = {
             likeCount: 110,
             commentCount: 21,
             rePostCount: 2,
-            url:'https://img.freepik.com/free-photo/beautiful-shot-isa-khan-s-tomb-delhi-india-cloudy-sky_181624-20750.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+            url: 'https://img.freepik.com/free-photo/beautiful-shot-isa-khan-s-tomb-delhi-india-cloudy-sky_181624-20750.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
         },
     ],
     likes: [
@@ -213,7 +213,7 @@ const DATA = {
 
 }
 
- export interface  HomeFeedPostInterface {
+export interface HomeFeedPostInterface {
     id: number;
     url: string;
     content: string;
@@ -244,7 +244,7 @@ interface PostInterface {
     id: number;
     userId: number;
     content: string;
-    url:string;
+    url: string;
     createdAt: string;
     likeCount: number,
     commentCount: number,
@@ -256,6 +256,16 @@ interface ConnectionInterface {
     userId: number,
     connectedTo: number,
     createdAt: string
+}
+export interface ConnectionListInterface {
+    id: number,
+    createdAt: string,
+    user: {
+        id?: number;
+        name?: string;
+        position?: string;
+        followerCount?: number;
+    },
 }
 
 interface LikeInterface {
@@ -276,13 +286,13 @@ export class DataStore {
     getHomeFeed(loggedInUserId: number): HomeFeedPostInterface[] {
         const feed: HomeFeedPostInterface[] = [];
         DATA.posts.forEach((post: PostInterface) => {
-           
+
             const user = DATA.users.find((user: UserInterface) => user.id === post.userId);
-           
+
             const isLike = DATA.likes.some((e: LikeInterface) => e.postId === post.id && e.userId === loggedInUserId);
-           
+
             const followers = DATA.connections.filter((con: ConnectionInterface) => con.userId === post.userId)
-           
+
 
 
 
@@ -313,10 +323,35 @@ export class DataStore {
         return DATA.users.filter((user: UserInterface) => user.name.toLowerCase().includes(search.toLowerCase()));
     }
 
-    users(id: number){
-        return DATA.users.find((e:UserInterface)=> e.id === id)
+    users(id: number) {
+        return DATA.users.find((e: UserInterface) => e.id === id)
     }
-       
+
+    connections(loggedInUserId: number) {
+        const connections: ConnectionListInterface[] = [];
+        DATA.connections.forEach((e) => {
+            const obj: ConnectionListInterface = {
+                id: e.id,
+                createdAt: e.createdAt,
+                user: {}
+            }
+            if (e.userId === loggedInUserId) {
+                const connectedToUser = DATA.users.find((user: UserInterface) => user.id === e.connectedTo);
+                   
+                obj.user = {
+                        id: connectedToUser?.id,
+                        name: connectedToUser?.name,
+                        position: connectedToUser?.position
+                    }
+
+
+                    connections.push(obj)
+            }
+        })
+        return connections
+    }
+
+
 
     userAuth(email: string): UserAuth {
         const isExists = DATA.users.find((e: UserInterface) => e.email === email);

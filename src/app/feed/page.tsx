@@ -7,15 +7,14 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
 import Layout from './Layout';
-import Search from './Search';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import RepeatOutlinedIcon from '@mui/icons-material/RepeatOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import moment from 'moment';
 import PublicIcon from '@mui/icons-material/Public';
+import Footer from './Footer';
 
 import style from '@/app/feed/feed.module.css'
 const Item = styled(Paper)(({ theme }) => ({
@@ -48,6 +47,7 @@ const Feed = () => {
     }
   }, []);
 
+
   const loginUser = Number(userId)
   const user = dataStore.users(loginUser)
 
@@ -55,7 +55,7 @@ const Feed = () => {
 
 
 
-  const data = dataStore.getHomeFeed(1)
+  const data = dataStore.getHomeFeed(loginUser)
 
   const [feedData, setFeedData] = useState(data)
 
@@ -78,25 +78,6 @@ const Feed = () => {
 
 
 
-  const [isFixed, setIsFixed] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 540) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-
-
   return (
     <>
 
@@ -116,18 +97,18 @@ const Feed = () => {
                 </Box>
                 <hr />
 
-                <Button sx={{ textTransform: 'none', display: 'flex', flexDirection: 'column', width: '100%', color: "black", position: 'inherit' }}>
+                <Button className={style.gridConnectButton} disableRipple>
                   <Typography sx={{ color: '#0000003d', }}> connections</Typography>
                   Connect with alumni</Button>
 
                 <hr />
-                <Button sx={{ width: '100%', textTransform: 'none', display: 'flex', flexDirection: 'column', position: 'inherit' }}>
+                <Button className={style.gridConnectButton} disableRipple>
                   <Typography sx={{ color: '#0000003d', }}>Accelerate your career</Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', color: 'black' }}>
                     <CheckBoxOutlineBlankIcon sx={{ color: '#F8C77E' }} /> Try Premium for 0</Box>
                 </Button>
                 <hr />
-                <Button sx={{ width: '100%', textTransform: 'none', color: 'black', position: 'inherit' }}>Saved items</Button>
+                <Button className={style.gridConnectButton} disableRipple>Saved items</Button>
 
               </Item>
               <Item sx={{ padding: 'inherit' }}>
@@ -138,7 +119,8 @@ const Feed = () => {
                   <Link href=''>Followed Hashtags</Link>
                 </Box>
                 <hr />
-                <Button sx={{ width: '100%', color: 'black', position: 'inherit' }}>Discover more</Button>
+                <Button sx={{ width: '100%', color: 'black', position: 'inherit' }} disableRipple
+                >Discover more</Button>
               </Item>
             </Grid>
 
@@ -152,37 +134,36 @@ const Feed = () => {
                     Discover free and easy ways to find a great hire, fast. </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: '10px', margin: '15px 10px' }}>
-                  <Button variant="outlined" className={style.ItemBtnHiring}
+                  <Button variant="outlined" className={style.ItemBtnHiring} disableRipple
                   >Yes, I am hiring </Button>
-                  <Button variant="outlined" className={style.ItemBtnHiring}>
-                    No not right now</Button>
+                  <Button variant='outlined' className={style.ItemBtnHiring} disableRipple
+                  > No not right now</Button>
                 </Box>
 
               </Item>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {feedData.map((text, index) => (
                   <Item key={index} sx={{ textAlign: 'inherit' }}>
-                    <Box sx={{display:'flex', gap:"15px", padding:'15px 0'}}>
-                    <Image src='https://img.freepik.com/premium-vector/p-logo-design_877718-2407.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
-                   width={50} height={50} alt='' />
-                   <Box>
-                   <Typography color='black'>{text.user.name}</Typography>
-                    <Typography  variant='body2'>{text.user.followerCount} Followers</Typography>
-
-                    <Typography variant='body2' sx={{display:'flex', alignItems:'center',gap:'8px'}}>
-                      {moment(text.createdAt).fromNow()}
-                       <PublicIcon sx={{width:"20px", height:'20px'}}/></Typography>
-                       </Box></Box>
+                    <Box sx={{ display: 'flex', gap: "15px", padding: '15px 0' }}>
+                      <Image src='https://img.freepik.com/premium-vector/p-logo-design_877718-2407.jpg?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
+                        width={50} height={50} alt='' />
+                      <Box>
+                        <Typography color='black'>{text.user.name}</Typography>
+                        <Typography variant='body2'>{text.user.followerCount} Followers</Typography>
+                        <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          {moment(text.createdAt).fromNow()}
+                          <PublicIcon sx={{ width: "20px", height: '20px' }} /></Typography>
+                      </Box></Box>
 
                     <Typography>{text.content} </Typography>
-                 
+
                     <Image src={text.url}
                       alt='' width={500} height={300} />
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin:'8px 0' }}>
-                     
-                      <Typography sx={{display:'flex', alignItems:'center', gap:'5px'}}> 
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '8px 0' }}>
+
+                      <Typography sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                         <Image src='https://cdn-icons-png.freepik.com/256/12083/12083167.png?ga=GA1.1.2107727690.1726806487&semt=ais_hybrid'
-                        height={20} width={20} alt=''/>
+                          height={20} width={20} alt='' />
                         {text.likeCount}</Typography>
 
 
@@ -192,16 +173,16 @@ const Feed = () => {
                     </Box><hr />
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', margin: '5px 0', }}>
 
-                      <Button onClick={() => handleLikeClick(text)}
+                      <Button onClick={() => handleLikeClick(text)} disableRipple
                         className={text.isLike ? style.postButtonLiked : style.postButton}>
-                        <ThumbUpIcon/>Like</Button>
+                        <ThumbUpIcon />Like</Button>
 
 
-                      <Button className={style.postButton}>
+                      <Button className={style.postButton} disableRipple>
                         <CommentOutlinedIcon />Comment</Button>
-                      <Button className={style.postButton}>
+                      <Button className={style.postButton} disableRipple>
                         <RepeatOutlinedIcon />Repost</Button>
-                      <Button className={style.postButton}>
+                      <Button className={style.postButton} disableRipple>
                         <SendOutlinedIcon />Send</Button></Box>
                   </Item>
                 ))}
@@ -226,42 +207,10 @@ const Feed = () => {
                   <Typography>Crossclimb</Typography>
                 </Box>
               </Item>
-
-              <Box sx={{
-                position: isFixed ? 'fixed' : 'relative',
-                bottom: isFixed ? '40px' : 'auto',
-                width: '294px',
-              }}>
-                <Item sx={{ padding: 'inherit', textAlign: 'start', }}>
-                  <Box sx={{ background: '#BFD3D6', width: '100%', height: '60px' }}></Box>
-                  <Box sx={{ padding: '10px', }}>
-                    <Typography sx={{ color: "black" }}>aramco</Typography>
-                    <Typography>preeti, grow your career by following</Typography>
-                    <Typography sx={{ color: "black" }}>aramco</Typography>
-                    <Typography>visit company page for aramco</Typography></Box>
-                  <Button variant='outlined'
-                    sx={{ width: '100%', textAlign: 'center', margin: ' 10px 0', position: 'inherit' }}>Follow</Button>
-                </Item>
-                <footer className={style.feedItemFooter}>
-                  <Link href=''>About</Link>
-                  <Link href=''>Accessibility</Link>
-                  <Link href=''>help Center</Link>
-                  <Link href=''>Privacy & Terms</Link>
-                  <Link href="">Ad Choices</Link>
-                  <Link href="">Advertising </Link>
-                  <Link href="">Business Services</Link>
-                  <Link href="">Get the LinkedIn app</Link>
-                  <Link href="">More</Link>
-                  <Typography sx={{ fontSize: "small", color: '#00000078', display: 'flex', alignItems: 'center' }}>
-                    Linked <LinkedInIcon sx={{ color: "#0A66C2" }} />
-                    LinkedIn Corporation © 2024</Typography>
-
-                </footer>
-              </Box>
-
+              <Footer />
             </Grid>
           </Grid>
-          <Search />
+     
         </Box>
       </Layout>
 

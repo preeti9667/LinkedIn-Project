@@ -1,4 +1,4 @@
-.avatar{
+.avatar {
     width: 24px;
     height: 24px;
     padding: 0;
@@ -6,29 +6,34 @@
     font-size: small;
     background: #004E41;
 }
-.feedNavLi{
+
+.feedNavLi {
     display: flex;
     list-style: none;
     gap: 11px;
     align-items: center;
     margin-left: 101px;
+
 }
-.navLiSelect1{
+
+.navLiSelect1 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.nabLiBtn{
+
+.nabLiBtn {
     font-size: x-small;
     width: max-content;
     color: black;
 }
-.feedNavTabsTab{
+
+.feedNavTabsTab {
     text-transform: none;
-    font-size: x-small;
-    color: #050505f2;
+
 }
-.GridItemLink{
+
+.GridItemLink {
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -36,44 +41,50 @@
     margin-bottom: 20px;
     padding: 10px;
 }
-.GridItemAvatar2{
-    background:#004E41;
-    width:90px;
-     height:90px;
-      font-size: -webkit-xxx-large;
-      margin: 20px;
-      border:  5px solid #8243CB;
-      position: inherit;
+
+.GridItemAvatar2 {
+    background: #004E41;
+    width: 90px;
+    height: 90px;
+    font-size: -webkit-xxx-large;
+    margin: 20px;
+    border: 5px solid #8243CB;
+    position: inherit;
 }
-.GridItemAvatar{
-    background:#004E41;
-    margin-top:-28px;
-    width:65px;
-     height:65px;
-      border:2px solid white;
-      font-size:xx-large;
-      position: inherit;
+
+.GridItemAvatar {
+    background: #004E41;
+    margin-top: -28px;
+    width: 65px;
+    height: 65px;
+    border: 2px solid white;
+    font-size: xx-large;
+    position: inherit;
 }
-.ItemBtnHiring{
+
+.ItemBtnHiring {
     text-transform: none;
     border-radius: 20px;
     padding: 5px 55px;
     position: inherit;
 }
-.feedItemFooter{
+
+.feedItemFooter {
     display: flex;
     flex-wrap: wrap;
     padding: 13px 23px;
     gap: 13px;
 }
-.searchTopBtn{
+
+.searchTopBtn {
     min-width: 30px;
     padding: inherit;
     height: 30px;
     border-radius: 100%;
     color: black;
 }
-.searchMinSearch{
+
+.searchMinSearch {
     align-items: center;
     background: #EDF3F8;
     margin: 10px 15px;
@@ -81,14 +92,98 @@
     box-shadow: none;
     display: flex;
 }
-.postButton{
+
+.postButton {
     text-transform: none;
     color: black;
     position: inherit;
 }
-.postButtonLiked{
+
+.postButtonLiked {
     text-transform: none;
     color: #3939ba79;
     position: inherit;
-  
+
+}
+
+.navMenu {
+    left: inherit;
+    position: absolute;
+    width: 280px;
+    top: 4rem;
+    right: 19rem;
+}
+.navMenu2 {
+    left: inherit;
+    position: absolute;
+    width: 600px;
+    top: 4rem;
+    right: 13rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 23px 10px;
+    height: 400px;
+    overflow-y: auto;
+}
+.nabMenuViewButton {
+    text-transform: none;
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 0 76px;
+    border-radius: 20px;
+}
+
+.navMenuSignOut {
+    text-transform: none;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.292);
+    font-size: large;
+
+}
+
+.navMenuLinkBox {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.navMenuLink {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.292);
+}
+
+.navMenuLink:hover {
+    text-decoration: underline;
+}
+
+.gridConnectButton {
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: inherit;
+    color: black;
+}
+.listItem{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.listItemLink{
+    color: black;
+    text-decoration: none;
+}
+.listItemLink:hover{
+    color: rgba(0, 0, 0, 0.301);
+    text-decoration: underline;
+}
+.listItemLinkRight{
+    color: rgba(0, 0, 0, 0.301);
+    text-decoration: none; 
+}
+.listItemLinkRight:hover{
+    text-decoration: underline;
 }

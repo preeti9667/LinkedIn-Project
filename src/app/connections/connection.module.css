@@ -1,0 +1,25 @@
+.GroupAvatar{
+    height: 30px;
+    width: 30px;
+    position: inherit;
+}
+.paperPremiumBtn{
+    text-transform: none;
+    border-radius: 20px;
+    margin: 10px 0;
+    color: black;
+    position: inherit;
+    background: #E9A53F;
+
+}
+.paperBtn{
+    text-transform: none;
+    position: inherit;
+}
+.openNetworkBtn{
+    text-transform: none;
+    text-align: start;
+    color: #00000063;
+    font-size: medium;
+
+}
