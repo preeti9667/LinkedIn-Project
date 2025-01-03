@@ -1,4 +1,4 @@
-.nb{
+.nb {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -6,16 +6,17 @@
     align-items: center;
     box-sizing: border-box;
     margin: 21px 0;
-    /* padding: 14px 0; */
 }
-.nbList{
+
+.nbList {
     display: flex;
     gap: 24px;
     list-style: none;
     margin-left: 13rem;
     color: #04040475
 }
-.nbListLink{
+
+.nbListLink {
     display: flex;
     flex-direction: column;
     width: min-content;
@@ -23,10 +24,12 @@
     align-items: center;
 
 }
-.nbListLink:hover{
+
+.nbListLink:hover {
     color: black;
 }
-.nbListLinkG{
+
+.nbListLinkG {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -35,48 +38,54 @@
     border-right: 1px solid black;
     padding: 0px 5px;
 }
-.nbListLinkG:hover{
+
+.nbListLinkG:hover {
     color: black;
 }
-.nbLink{
+
+.nbLink {
     display: flex;
     align-items: center;
     color: #1515bba3;
     font-weight: 800;
     font-size: x-large;
 }
-.nbBtn{
+
+.nbBtn {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-left: -7rem;
 }
-.nbBtnJo:hover{
+
+.nbBtnJo:hover {
     border-radius: 22px;
     padding: 8px 24px;
     font-size: 16px;
     background: rgba(0, 0, 255, 0.063);
 }
-.nbBtnJo{
+
+.nbBtnJo {
     border-radius: 22px;
     padding: 8px 24px;
     font-size: 16px;
     background: white;
 }
-.nbBtnSi{
+
+.nbBtnSi {
     border-radius: 22px;
-    /* padding: 8px 24px; */
     font-size: 16px;
 
 }
 
 
-.h1{
+.h1 {
     font-size: 48px;
     font-weight: 200;
     color: #526a6e;
 }
-.heroBtnFlex{
+
+.heroBtnFlex {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -84,69 +93,79 @@
     margin-top: 13px;
     text-align: center;
 }
-.heroBtnFlexP{
+
+.heroBtnFlexP {
     font-size: 12px;
 }
-.heroBtnFlexPp{
+
+.heroBtnFlexPp {
     text-align: center;
     margin-top: 30px;
     font-size: larger;
 }
-.heroBtnFlexPLink{
+
+.heroBtnFlexPLink {
     color: rgb(0 0 255 / 98%);
     font-size: 13px;
     padding-left: 5px;
 }
-.heroBtnFlexGoo{
+
+.heroBtnFlexGoo {
     border: 2px solid #526a6e;
     border-radius: 27px;
     padding: 10px;
     color: black;
 }
-.heroBtnFlexGoo:hover{
+
+.heroBtnFlexGoo:hover {
     background: rgba(0, 0, 255, 0.09);
 }
-.heroBtnFlexSign{
+
+.heroBtnFlexSign {
     border: 2px solid #526a6e;
     border-radius: 27px;
     color: black;
     padding: 10px;
 }
-.gridBtnList{
+
+.gridBtnList {
     border: 2px solid #526a6e;
     border-radius: 27px;
     color: black;
     padding: 16px;
 }
-.gridBtnList:hover{
+
+.gridBtnList:hover {
     background: rgba(0, 0, 0, 0.037);
 }
-.heroBtnFlexSign:hover{
+
+.heroBtnFlexSign:hover {
     background: rgba(0, 0, 0, 0.037);
 }
-.heroListBtn{
+
+.heroListBtn {
     display: flex;
     flex-wrap: wrap;
     gap: 45px 10px;
     list-style: none;
 
 }
-.gridListBtn{
+
+.gridListBtn {
     border: 2px solid rgba(0, 0, 255, 0.602);
     color: rgba(0, 0, 255, 0.742);
     border-radius: 25px;
     padding: 12px 25px;
 
 }
-.gridListBtn:hover{
+
+.gridListBtn:hover {
     background: rgba(0, 0, 255, 0.029);
     color: rgba(0, 0, 0, 0.328);
 }
- .gridListBtn{
-    /* display: flex; */
-   
-}
-.gridBtnList2{
+
+
+.gridBtnList2 {
     display: flex;
     align-items: center;
     border: 2px solid #526a6e;
@@ -156,10 +175,12 @@
     margin-top: 40px;
     width: fit-content;
 }
-.gridBtnList2:hover{
-background: rgba(0, 0, 0, 0.037);
+
+.gridBtnList2:hover {
+    background: rgba(0, 0, 0, 0.037);
 }
-.fullColorCon{
+
+.fullColorCon {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -167,7 +188,8 @@ background: rgba(0, 0, 0, 0.037);
     gap: 21px;
     padding: 50px 0;
 }
-.chooseATopicBtn{
+
+.chooseATopicBtn {
     display: flex;
     align-items: center;
     border-radius: 6px;
@@ -178,10 +200,12 @@ background: rgba(0, 0, 0, 0.037);
     gap: 15px;
     color: rgba(0, 0, 0, 0.781);
 }
-.chooseATopicBtn:hover{
+
+.chooseATopicBtn:hover {
     background: rgba(0, 0, 0, 0.037);
 }
-.threeBtnGroup{
+
+.threeBtnGroup {
     display: flex;
     flex-direction: column;
     width: 425px;
@@ -189,46 +213,50 @@ background: rgba(0, 0, 0, 0.037);
     gap: 16px;
     font-size: large;
 }
-.threeBtnGroupBtn{
+
+.threeBtnGroupBtn {
     display: flex;
     align-items: center;
     padding: 14px;
     justify-content: space-between;
     background: #e1dad097;
-  
+
 }
-.threeBtnGroupBtn:hover{
-    background:#E1DAD0 ;
+
+.threeBtnGroupBtn:hover {
+    background: #E1DAD0;
 }
-.fullImage::after{
+
+.fullImage::after {
     background-image: url('https://static.licdn.com/aero-v1/sc/h/4ezbw852t2wrgf27zl1o1qtu7');
     content: '';
     width: 100vw;
     height: 900px;
-    /* right: 0; */
     position: absolute;
-    /* display: block; */
     z-index: -2;
     top: 0;
-    
-}
-.fullImage{
-    position: relative;
-    /* display: inline-block; */
-   
+
 }
 
- .footerContainer{
+.fullImage {
+    position: relative;
+    /* display: inline-block; */
+
+}
+
+.footerContainer {
     display: flex;
     align-items: baseline;
     padding: 20px;
     gap: 126px;
- }
- .footerListLink{
+}
+
+.footerListLink {
     color: rgba(0, 0, 0, 0.399);
     text-decoration: none;
- }
- .footerListLink:hover{
+}
+
+.footerListLink:hover {
     text-decoration: underline;
     color: rgba(0, 0, 255, 0.446);
- }
+}

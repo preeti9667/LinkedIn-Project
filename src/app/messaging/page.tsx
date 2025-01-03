@@ -5,7 +5,7 @@ export default function page() {
   return (
     <div>
       <Layout>
-        <Box sx={{height:'100vh'}}>
+        <Box sx={{ height: '100vh' }}>
           <Typography>Messaging</Typography></Box>
       </Layout>
     </div>

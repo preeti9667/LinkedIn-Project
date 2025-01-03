@@ -13,23 +13,23 @@ export default function Layout({
 
 }>) {
   return (
-    
-    <Box sx={{background:'#F4F2EE', width:'100%', }}>
-    <Navbar/>
-  <Box sx={{paddingTop:'80px', }}>
-    <Search/>
-    {children}
 
-   </Box>
-  </Box>
+    <Box sx={{ background: '#F4F2EE', width: '100%', }}>
+      <Navbar />
+      <Box sx={{ paddingTop: '80px', }}>
+        <Search />
+        {children}
 
-       
-      
-    
+      </Box>
+    </Box>
+
+
+
+
   );
 }
 export const metadata: Metadata = {
-  title:  'Feed | LinkedIn',
-  
- 
+  title: 'Feed | LinkedIn',
+
+
 };

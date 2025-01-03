@@ -113,6 +113,7 @@
     top: 4rem;
     right: 19rem;
 }
+
 .navMenu2 {
     left: inherit;
     position: absolute;
@@ -125,6 +126,7 @@
     height: 400px;
     overflow-y: auto;
 }
+
 .nabMenuViewButton {
     text-transform: none;
     border: 1px solid blue;
@@ -166,24 +168,29 @@
     position: inherit;
     color: black;
 }
-.listItem{
+
+.listItem {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
-.listItemLink{
+
+.listItemLink {
     color: black;
     text-decoration: none;
 }
-.listItemLink:hover{
+
+.listItemLink:hover {
     color: rgba(0, 0, 0, 0.301);
     text-decoration: underline;
 }
-.listItemLinkRight{
+
+.listItemLinkRight {
     color: rgba(0, 0, 0, 0.301);
-    text-decoration: none; 
+    text-decoration: none;
 }
-.listItemLinkRight:hover{
+
+.listItemLinkRight:hover {
     text-decoration: underline;
 }

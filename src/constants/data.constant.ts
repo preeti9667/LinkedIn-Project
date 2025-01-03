@@ -337,15 +337,15 @@ export class DataStore {
             }
             if (e.userId === loggedInUserId) {
                 const connectedToUser = DATA.users.find((user: UserInterface) => user.id === e.connectedTo);
-                   
+
                 obj.user = {
-                        id: connectedToUser?.id,
-                        name: connectedToUser?.name,
-                        position: connectedToUser?.position
-                    }
+                    id: connectedToUser?.id,
+                    name: connectedToUser?.name,
+                    position: connectedToUser?.position
+                }
 
 
-                    connections.push(obj)
+                connections.push(obj)
             }
         })
         return connections
