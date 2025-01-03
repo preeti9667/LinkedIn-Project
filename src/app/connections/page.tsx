@@ -123,7 +123,7 @@ const Connections = () => {
             {
               connectedUsers.map((text, index) => (
                 <Box key={index}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box sx={{ display: 'flex', margin: '30px 0', gap: '10px', alignItems: 'center' }}>
                       <Avatar className={styled.GridItemAvatar}>{text.user.name ? String(text.user.name[0]) : ''}</Avatar>
                       <Box>
