@@ -59,7 +59,8 @@ export default function Search() {
     <div>
       <Paper sx={{
         width: '300px', position: 'fixed', bottom: '-3px', right: '30px',
-        height: openSearch ? '430px' : '50px', padding: 'inherit'
+        height: openSearch ? '430px' : '50px', padding: 'inherit',
+        zIndex:"1"
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: '2px' }}>

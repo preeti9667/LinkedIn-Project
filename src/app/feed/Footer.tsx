@@ -29,6 +29,7 @@ export default function Footer() {
       <Box sx={{
         position: isFixed ? 'fixed' : 'relative',
         bottom: isFixed ? '40px' : 'auto',
+        zIndex:"0",
         width: '294px',
       }}>
         <Paper sx={{ padding: 'inherit', textAlign: 'start', }}>
