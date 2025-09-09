@@ -63,7 +63,7 @@ const Navbar = () => {
             </ol>
             <div className={style.nbBtn}>
                 <Button sx={{textTransform: 'none'}} className={style.nbBtnJo}>Join now</Button>
-               <Link href='../login'> <Button variant='outlined'sx={{textTransform: 'none'}}
+               <Link href='/login'> <Button variant='outlined'sx={{textTransform: 'none'}}
                  className={style.nbBtnSi}>Sign in</Button></Link>
             </div>
         </div>

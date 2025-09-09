@@ -134,6 +134,7 @@ export default function Login() {
                     )
                   }} />
                 <Link href='' underline='none'>Forgot password?</Link>
+                <Box sx={{ fontSize: 'small' ,boxShadow:'1px 1px 1px  white', }}>email : pukhraj@gmail.com,password : 123456</Box>
                 <Button type='submit' variant="contained"
                   sx={{ textTransform: 'none', padding: '10px 3px', borderRadius: '26px', fontSize: 'large' }}
                 >Sign in</Button>
