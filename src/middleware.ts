@@ -4,8 +4,8 @@ import type { NextRequest } from 'next/server';
 export function middleware(req: NextRequest) {
 
     const path = req.nextUrl.pathname
-
-    const isPublicPath = path === '/login' || path === '/home'
+    
+    const isPublicPath = path === '/home' || path === '/login'
 
 
     const userId = req.cookies.get('loggedInUser')?.value
@@ -13,11 +13,11 @@ export function middleware(req: NextRequest) {
 
 
     if (isPublicPath && userId) {
-        return NextResponse.redirect(new URL('/home', req.url))
+        return NextResponse.redirect(new URL('/feed', req.url))
     }
 
     if (!isPublicPath && !userId) {
-        return NextResponse.redirect(new URL('/login', req.url))
+        return NextResponse.redirect(new URL('/home', req.url))
     }
 
 }
