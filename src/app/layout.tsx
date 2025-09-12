@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ThemeRegistry from "./component/ThemeRegistry";
 
 import "./globals.css";
 export const metadata: Metadata = {
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body  cz-shortcut-listen="true"
   >
+    <ThemeRegistry>
         {children}
+    </ThemeRegistry>
       </body>
     </html>
   );
