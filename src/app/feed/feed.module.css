@@ -154,6 +154,7 @@
 .navMenuLink {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.292);
+    cursor: pointer;
 }
 
 .navMenuLink:hover {
@@ -179,6 +180,7 @@
 .listItemLink {
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .listItemLink:hover {
@@ -189,6 +191,7 @@
 .listItemLinkRight {
     color: rgba(0, 0, 0, 0.301);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .listItemLinkRight:hover {

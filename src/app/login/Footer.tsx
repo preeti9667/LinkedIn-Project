@@ -14,23 +14,23 @@ const Footer = () => {
         <List sx={{ display: 'flex', fontSize: "x-small", width: '60vw' }}>
           <ListItem
             sx={{ padding: '5px 0', marginRight: '-34px', marginLeft: '9px' }}
-          ><Link href='' className={styled.footerListLink}>User Agreement </Link></ListItem>
+          ><Link  className={styled.footerListLink}>User Agreement </Link></ListItem>
           <ListItem
             sx={{ padding: '5px 0', marginRight: '-34px' }}
-          ><Link href='' className={styled.footerListLink}>Privacy Policy</Link></ListItem>
+          ><Link  className={styled.footerListLink}>Privacy Policy</Link></ListItem>
           <ListItem
             sx={{ padding: '5px 0', marginRight: '-34px' }}
-          ><Link href='' className={styled.footerListLink}>Cookie Policy</Link></ListItem>
+          ><Link  className={styled.footerListLink}>Cookie Policy</Link></ListItem>
           <ListItem
             sx={{ padding: '5px 0', marginRight: '-34px' }}
-          ><Link href='' className={styled.footerListLink}>Copyright Policy</Link></ListItem>
+          ><Link  className={styled.footerListLink}>Copyright Policy</Link></ListItem>
 
 
           <ListItem sx={{ padding: '5px 0', marginRight: '-34px' }}>
-            <Link href='' className={styled.footerListLink}>Send Feedback
+            <Link  className={styled.footerListLink}>Send Feedback
             </Link></ListItem>
           <ListItem sx={{ padding: '5px 0', marginRight: '-34px' }}>
-            <Link href='' className={styled.footerListLink}>Community Guidelines</Link></ListItem>
+            <Link  className={styled.footerListLink}>Community Guidelines</Link></ListItem>
           <ListItem><Link href='' className={styled.footerListLink}
             sx={{ display: 'flex', alignItems: 'center', paddingLeft: '5px' }}>
             Language<ExpandMoreIcon />

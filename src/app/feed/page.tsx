@@ -113,10 +113,10 @@ const Feed = () => {
               </Item>
               <Item sx={{ padding: 'inherit' }}>
                 <Box className={style.GridItemLink}>
-                  <Link href=''>Groups</Link>
-                  <Link href=''>Events
+                  <Link sx={{cursor:'pointer'}}>Groups</Link>
+                  <Link sx={{cursor:'pointer'}}>Events
                   </Link>
-                  <Link href=''>Followed Hashtags</Link>
+                  <Link sx={{cursor:'pointer'}}>Followed Hashtags</Link>
                 </Box>
                 <hr />
                 <Button sx={{ width: '100%', color: 'black', position: 'inherit' }} disableRipple

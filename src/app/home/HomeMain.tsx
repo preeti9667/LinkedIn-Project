@@ -20,24 +20,24 @@ export default function HomeMain() {
           <Grid item xs={6}  >
             <h1 className={style.h1}>Welcome to your <br />professional community</h1>
             <Box className={style.heroBtnFlex}>
-              <Link href='' className={style.heroBtnFlexGoo} underline="none"> Google  </Link>
-              <Link href='' className={style.heroBtnFlexSign} underline="none">
+              <Link className={style.heroBtnFlexGoo} underline="none"> Google  </Link>
+              <Link className={style.heroBtnFlexSign} underline="none">
                 Sign in with email </Link>
 
               <p className={style.heroBtnFlexP}>
                 By clicking Continue to join or sign in, you agree to LinkedIn’s
-                <Link href='' className={style.heroBtnFlexPLink} underline="none">
+                <Link className={style.heroBtnFlexPLink} underline="none">
                   User <br /> Agreement</Link>,
-                <Link href='' className={style.heroBtnFlexPLink} underline="none" >
+                <Link className={style.heroBtnFlexPLink} underline="none" >
                   Privacy Policy</Link>,  and
-                <Link href=' '
+                <Link 
                   className={style.heroBtnFlexPLink}
                   underline="none">
                   Cookie Policy</Link>.</p>
             </Box>
             <p className={style.heroBtnFlexPp}>
               New to LinkedIn?
-              <Link href='' className={style.heroBtnFlexPLink} underline="none">join now</Link>
+              <Link className={style.heroBtnFlexPLink} underline="none">join now</Link>
             </p>
           </Grid>
           <Grid item xs={6}>
@@ -61,20 +61,20 @@ export default function HomeMain() {
             </Grid>
             <Grid item xs={6}>
               <ol className={style.heroListBtn} >
-                <li> <Link href='' className={style.gridBtnList} underline="none">
+                <li> <Link className={style.gridBtnList} underline="none">
                   Marketing</Link></li>
-                <li> <Link href='' className={style.gridBtnList} underline="none">
+                <li> <Link className={style.gridBtnList} underline="none">
                   Public Administration</Link></li>
-                <li><Link href='' className={style.gridBtnList} underline="none">
+                <li><Link className={style.gridBtnList} underline="none">
                   Healthcare</Link></li>
-                <li><Link href='' className={style.gridBtnList} underline="none">
+                <li><Link className={style.gridBtnList} underline="none">
                   Engineering</Link></li>
-                <li><Link href='' className={style.gridBtnList} underline="none">IT Services</Link> </li>
-                <li><Link href='' className={style.gridBtnList} underline="none">Sustainability </Link> </li>
-                <li><Link href='' className={style.gridBtnList} underline="none">Business Administration</Link> </li>
-                <li><Link href='' className={style.gridBtnList} underline="none">Telecommunications</Link> </li>
-                <li><Link href='' className={style.gridBtnList} underline="none">HR Management</Link> </li>
-                <li><Link href='' className={style.gridListBtn} underline="none">
+                <li><Link className={style.gridBtnList} underline="none">IT Services</Link> </li>
+                <li><Link className={style.gridBtnList} underline="none">Sustainability </Link> </li>
+                <li><Link className={style.gridBtnList} underline="none">Business Administration</Link> </li>
+                <li><Link className={style.gridBtnList} underline="none">Telecommunications</Link> </li>
+                <li><Link className={style.gridBtnList} underline="none">HR Management</Link> </li>
+                <li><Link className={style.gridListBtn} underline="none">
                   Show all</Link></li>
 
               </ol>
@@ -91,36 +91,36 @@ export default function HomeMain() {
           <Grid item xs={6} sx={{ display: 'flex', flexDirection: "column", }}>
             <ol className={style.heroListBtn}>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none"> Engineering</Link>
+                <Link  className={style.gridBtnList} underline="none"> Engineering</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Business Development</Link>
+                <Link  className={style.gridBtnList} underline="none">Business Development</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Finance</Link>
+                <Link  className={style.gridBtnList} underline="none">Finance</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Administrative Assistant</Link>
+                <Link  className={style.gridBtnList} underline="none">Administrative Assistant</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Retail Associate</Link>
+                <Link  className={style.gridBtnList} underline="none">Retail Associate</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Customer Service</Link>
+                <Link  className={style.gridBtnList} underline="none">Customer Service</Link>
               </li> <li>
-                <Link href='' className={style.gridBtnList} underline="none">Operations</Link>
+                <Link  className={style.gridBtnList} underline="none">Operations</Link>
               </li> <li>
-                <Link href='' className={style.gridBtnList} underline="none">Information Technology</Link>
+                <Link  className={style.gridBtnList} underline="none">Information Technology</Link>
               </li>
               <li>
-                <Link href='' className={style.gridBtnList} underline="none">Marketing</Link>
+                <Link  className={style.gridBtnList} underline="none">Marketing</Link>
               </li> <li>
-                <Link href='' className={style.gridBtnList} underline="none">Human Resources</Link>
+                <Link  className={style.gridBtnList} underline="none">Human Resources</Link>
               </li>
             </ol>
 
             <Box>
-              <Link href='' className={style.gridBtnList2} underline="none">
+              <Link  className={style.gridBtnList2} underline="none">
                 Engineering < ExpandMoreIcon /></Link></Box>
 
           </Grid>
@@ -133,7 +133,7 @@ export default function HomeMain() {
           <Typography variant='h4' sx={{ color: '#B24020' }}>
             Post your job for millions of people to see</Typography>
           {/* <Button> */}
-          <Link href='' className={style.gridListBtn} underline="none"
+          <Link  className={style.gridListBtn} underline="none"
           >Post a job</Link>
           {/* </Button> */}
         </Container> </Box>
@@ -152,20 +152,20 @@ export default function HomeMain() {
           </Grid>
           <Grid item xs={6}>
             <ol className={style.heroListBtn} >
-              <li> <Link href='' className={style.gridBtnList} underline="none">
+              <li> <Link  className={style.gridBtnList} underline="none">
                 E-Commerce Platforms</Link></li>
-              <li> <Link href='' className={style.gridBtnList} underline="none">
+              <li> <Link  className={style.gridBtnList} underline="none">
                 CRM Software</Link></li>
-              <li><Link href='' className={style.gridBtnList} underline="none">
+              <li><Link  className={style.gridBtnList} underline="none">
                 Human Resources Management Systems</Link></li>
-              <li><Link href='' className={style.gridBtnList} underline="none">
+              <li><Link  className={style.gridBtnList} underline="none">
                 Recruiting Software</Link></li>
-              <li><Link href='' className={style.gridBtnList} underline="none">Sales Intelligence Software</Link> </li>
-              <li><Link href='' className={style.gridBtnList} underline="none">Project Management Software </Link> </li>
-              <li><Link href='' className={style.gridBtnList} underline="none">Help Desk Software</Link> </li>
-              <li><Link href='' className={style.gridBtnList} underline="none">Social NetWorking SoftWare</Link> </li>
-              <li><Link href='' className={style.gridBtnList} underline="none">Desktop Publishing Software</Link> </li>
-              <li><Link href='' className={style.gridListBtn} underline="none">
+              <li><Link  className={style.gridBtnList} underline="none">Sales Intelligence Software</Link> </li>
+              <li><Link  className={style.gridBtnList} underline="none">Project Management Software </Link> </li>
+              <li><Link  className={style.gridBtnList} underline="none">Help Desk Software</Link> </li>
+              <li><Link  className={style.gridBtnList} underline="none">Social NetWorking SoftWare</Link> </li>
+              <li><Link  className={style.gridBtnList} underline="none">Desktop Publishing Software</Link> </li>
+              <li><Link  className={style.gridListBtn} underline="none">
                 Show all</Link></li>
 
             </ol>
@@ -186,11 +186,11 @@ export default function HomeMain() {
             </Grid>
             <Grid item xs={6} sx={{ paddingTop: '68px', margin: 'auto' }}>
               <ol className={style.heroListBtn} >
-                <li> <Link href='' className={style.gridBtnList} underline="none">
+                <li> <Link  className={style.gridBtnList} underline="none">
                   Pinpoint</Link></li>
-                <li> <Link href='' className={style.gridBtnList} underline="none">
+                <li> <Link  className={style.gridBtnList} underline="none">
                   Queens</Link></li>
-                <li><Link href='' className={style.gridBtnList} underline="none">
+                <li><Link  className={style.gridBtnList} underline="none">
                   Crossclimb</Link></li>
 
 
@@ -233,7 +233,7 @@ export default function HomeMain() {
                 height={300} width={300} />
               <Typography variant='h4' sx={{ marginBottom: '43px' }}>
                 Connect with people who can<br /> help</Typography>
-              <Link href='' className={style.gridBtnList} underline="none" >
+              <Link  className={style.gridBtnList} underline="none" >
                 Find people you know</Link>
             </Box>
           </Grid>
@@ -265,17 +265,17 @@ export default function HomeMain() {
               <Typography variant='h6'>Anyone looking to navigate their professional life.</Typography>
               <Box className={style.threeBtnGroup}>
 
-                <Link href='' className={style.threeBtnGroupBtn} sx={{ color: '#8C59CD' }}
+                <Link  className={style.threeBtnGroupBtn} sx={{ color: '#8C59CD' }}
                   underline="none">Find a coworker or  classmate
                   <ArrowForwardIosIcon /></Link>
 
 
-                <Link href='' className={style.threeBtnGroupBtn} sx={{ color: '#8C59CD' }}
+                <Link  className={style.threeBtnGroupBtn} sx={{ color: '#8C59CD' }}
                   underline="none">Find a new job
                   <ArrowForwardIosIcon /></Link>
 
 
-                <Link href='' className={style.threeBtnGroupBtn} sx={{ color: 'black' }}
+                <Link  className={style.threeBtnGroupBtn} sx={{ color: 'black' }}
 
                   underline="none">Find a course or training
                   <ArrowForwardIosIcon /></Link>
@@ -311,7 +311,7 @@ export default function HomeMain() {
         <Box sx={{ marginTop: '99px', padding: '0 98px' }}>
 
           <Typography variant='h3'>Join your colleagues, classmates, and friends on<br /> LinkedIn.</Typography>
-          <Link href=''>
+          <Link>
             <Button variant="contained"
               sx={{ textTransform: 'none', borderRadius: '20px', padding: '8px 24px', margin: "15px 0" }}>
               Get Started</Button></Link>
@@ -330,57 +330,57 @@ export default function HomeMain() {
               <Typography variant='h6'>General</Typography>
               <List>
                 <ListItem sx={{ padding: '5px 0', }} >
-                  <Link href='' className={style.footerListLink}> Sign Up</Link></ListItem>
+                  <Link  className={style.footerListLink}> Sign Up</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}> Help Center</Link></ListItem>
+                  <Link  className={style.footerListLink}> Help Center</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}> About</Link></ListItem>
+                  <Link  className={style.footerListLink}> About</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Press</Link></ListItem>
+                  <Link  className={style.footerListLink}>Press</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>
+                  <Link  className={style.footerListLink}>
                     Blog</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Careers</Link></ListItem>
+                  <Link  className={style.footerListLink}>Careers</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Developers</Link></ListItem></List>
+                  <Link  className={style.footerListLink}>Developers</Link></ListItem></List>
             </Box>
 
             <Box>
               <Typography variant='h6'>Browse LinkedIn</Typography>
               <List>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Learning</Link></ListItem>
+                  <Link  className={style.footerListLink}>Learning</Link></ListItem>
 
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Jobs</Link></ListItem>
+                  <Link  className={style.footerListLink}>Jobs</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Games</Link></ListItem>
+                  <Link  className={style.footerListLink}>Games</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Salary</Link></ListItem>
+                  <Link  className={style.footerListLink}>Salary</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>
+                  <Link  className={style.footerListLink}>
                     Mobile</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Services</Link></ListItem>
+                  <Link  className={style.footerListLink}>Services</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Products</Link></ListItem>
+                  <Link  className={style.footerListLink}>Products</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Top Companies Hub</Link></ListItem></List>
+                  <Link  className={style.footerListLink}>Top Companies Hub</Link></ListItem></List>
             </Box>
 
             <Box>
               <Typography variant='h6'>Business Solutions</Typography>
               <List>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Talent</Link></ListItem>
+                  <Link  className={style.footerListLink}>Talent</Link></ListItem>
 
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Marketing</Link></ListItem>
+                  <Link  className={style.footerListLink}>Marketing</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Sales</Link></ListItem>
+                  <Link  className={style.footerListLink}>Sales</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Learning</Link></ListItem>
+                  <Link  className={style.footerListLink}>Learning</Link></ListItem>
               </List>
             </Box>
 
@@ -388,37 +388,37 @@ export default function HomeMain() {
               <Typography variant='h6'>Directories</Typography>
               <List>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Members</Link></ListItem>
+                  <Link  className={style.footerListLink}>Members</Link></ListItem>
 
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Jobs</Link></ListItem>
+                  <Link  className={style.footerListLink}>Jobs</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Companies</Link></ListItem>
+                  <Link  className={style.footerListLink}>Companies</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Featured</Link></ListItem>
+                  <Link  className={style.footerListLink}>Featured</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>
+                  <Link  className={style.footerListLink}>
                     Learning</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Posts</Link></ListItem>
+                  <Link  className={style.footerListLink}>Posts</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Articles</Link></ListItem>
+                  <Link  className={style.footerListLink}>Articles</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Schools</Link></ListItem>
+                  <Link  className={style.footerListLink}>Schools</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>News</Link></ListItem>
+                  <Link  className={style.footerListLink}>News</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>News Letters</Link></ListItem>
+                  <Link  className={style.footerListLink}>News Letters</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Services</Link></ListItem>
+                  <Link  className={style.footerListLink}>Services</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Products</Link></ListItem>
+                  <Link  className={style.footerListLink}>Products</Link></ListItem>
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>Advice</Link>
+                  <Link  className={style.footerListLink}>Advice</Link>
                 </ListItem>
 
                 <ListItem sx={{ padding: '5px 0', }}>
-                  <Link href='' className={style.footerListLink}>People Search</Link></ListItem></List>
+                  <Link  className={style.footerListLink}>People Search</Link></ListItem></List>
             </Box>
 
           </Box>

@@ -43,15 +43,15 @@ export default function Footer() {
             sx={{ width: '100%', textAlign: 'center', margin: ' 10px 0', position: 'relative' }}>Follow</Button>
         </Paper>
         <footer className={style.feedItemFooter}>
-          <Link href=''>About</Link>
-          <Link href=''>Accessibility</Link>
-          <Link href=''>help Center</Link>
-          <Link href=''>Privacy & Terms</Link>
-          <Link href="">Ad Choices</Link>
-          <Link href="">Advertising </Link>
-          <Link href="">Business Services</Link>
-          <Link href="">Get the LinkedIn app</Link>
-          <Link href="">More</Link>
+          <Link sx={{cursor:'pointer'}}>About</Link>
+          <Link sx={{cursor:'pointer'}}>Accessibility</Link>
+          <Link sx={{cursor:'pointer'}}>help Center</Link>
+          <Link sx={{cursor:'pointer'}}>Privacy & Terms</Link>
+          <Link sx={{cursor:'pointer'}}>Ad Choices</Link>
+          <Link sx={{cursor:'pointer'}}>Advertising </Link>
+          <Link sx={{cursor:'pointer'}}>Business Services</Link>
+          <Link sx={{cursor:'pointer'}}>Get the LinkedIn app</Link>
+          <Link sx={{cursor:'pointer'}}>More</Link>
           <Typography sx={{ fontSize: "small", color: '#00000078', display: 'flex', alignItems: 'center' }}>
             Linked <LinkedInIcon sx={{ color: "#0A66C2" }} />
             LinkedIn Corporation © 2024</Typography>

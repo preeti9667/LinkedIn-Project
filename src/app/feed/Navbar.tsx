@@ -179,15 +179,15 @@ const Navbar = () => {
                 <hr />
                 <Box className={style.navMenuLinkBox}>
                   <Typography>Account</Typography>
-                  <Link href='' className={style.navMenuLink}>Settings & privacy</Link>
-                  <Link href="" className={style.navMenuLink}>Help</Link>
-                  <Link href='' className={style.navMenuLink}>Language</Link>
+                  <Link  className={style.navMenuLink}>Settings & privacy</Link>
+                  <Link  className={style.navMenuLink}>Help</Link>
+                  <Link  className={style.navMenuLink}>Language</Link>
                 </Box>
                 <hr />
                 <Box className={style.navMenuLinkBox}>
                   <Typography>Manage</Typography>
-                  <Link href='' className={style.navMenuLink}>Posts & Activity</Link>
-                  <Link href='' className={style.navMenuLink}>job Posts Account</Link>
+                  <Link  className={style.navMenuLink}>Posts & Activity</Link>
+                  <Link  className={style.navMenuLink}>job Posts Account</Link>
                 </Box> <hr />
                 <Button onClick={handleSignOut}
                   sx={{ '&:hover': { background: 'none', textDecoration: 'underline', } }}
@@ -214,24 +214,24 @@ const Navbar = () => {
                   <Typography variant='h6'>Visit More LinkedIn Products</Typography>
                   <List>
                     <ListItem className={style.listItem}>
-                      <Link href='' className={style.listItemLink}> Find Leads</Link>
-                      <Link href='' className={style.listItemLink}>Groups</Link>
+                      <Link  className={style.listItemLink}> Find Leads</Link>
+                      <Link  className={style.listItemLink}>Groups</Link>
 
                     </ListItem>
                     <ListItem className={style.listItem} sx={{ color: 'rgba(0, 0, 0, 0.301)' }}> Talent
-                      <Link href='' className={style.listItemLink} >Talent Insights</Link>
-                      <Link href='' className={style.listItemLink}>Talent Insights</Link>
-                      <Link href='' className={style.listItemLink}>Post a job</Link>
+                      <Link className={style.listItemLink} >Talent Insights</Link>
+                      <Link  className={style.listItemLink}>Talent Insights</Link>
+                      <Link  className={style.listItemLink}>Post a job</Link>
 
 
                     </ListItem>
                     <ListItem className={style.listItem} sx={{ color: 'rgba(0, 0, 0, 0.301)' }}> Sales
-                      <Link href='' className={style.listItemLink}>Services Marketplace</Link>
-                      <Link href='' className={style.listItemLink}>Marketing</Link>
-                      <Link href='' className={style.listItemLink}>Advertise</Link>
+                      <Link  className={style.listItemLink}>Services Marketplace</Link>
+                      <Link  className={style.listItemLink}>Marketing</Link>
+                      <Link className={style.listItemLink}>Advertise</Link>
                     </ListItem >
                     <ListItem className={style.listItem} sx={{ color: 'rgba(0, 0, 0, 0.301)' }}>Learning
-                      <Link href='' className={style.listItemLink}>Learning</Link>
+                      <Link  className={style.listItemLink}>Learning</Link>
 
                     </ListItem>
                   </List>
@@ -244,25 +244,25 @@ const Navbar = () => {
                     <ListItem className={style.listItem}  >
 
                       Hire on LinkedIn
-                      <Link href='' className={style.listItemLinkRight} >
+                      <Link  className={style.listItemLinkRight} >
                         Find, attract and recruit talent
 
                       </Link>
                     </ListItem>
                     <ListItem className={style.listItem}>Sell with LinkedIn
-                      <Link href='' className={style.listItemLinkRight} >
+                      <Link  className={style.listItemLinkRight} >
                         Unlock sales opportunities</Link>
                     </ListItem>
                     <ListItem className={style.listItem} >Post a job for free
-                      <Link href='' className={style.listItemLinkRight}>
+                      <Link  className={style.listItemLinkRight}>
                         Get qualified applicants quickly</Link>
                     </ListItem>
                     <ListItem className={style.listItem}>Advertise on LinkedIn
-                      <Link href='' className={style.listItemLinkRight} >
+                      <Link  className={style.listItemLinkRight} >
                         Acquire customers and grow your business</Link>
                     </ListItem>
                     <ListItem className={style.listItem}>Learn with LinkedIn
-                      <Link href='' className={style.listItemLinkRight} >
+                      <Link className={style.listItemLinkRight} >
                         Courses to develop your employees</Link>
                     </ListItem>
                   </List>

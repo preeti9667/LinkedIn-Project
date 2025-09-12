@@ -92,16 +92,19 @@
     width: 400px;
     margin-top: 13px;
     text-align: center;
+    cursor: pointer;
 }
 
 .heroBtnFlexP {
     font-size: 12px;
+    cursor: pointer;
 }
 
 .heroBtnFlexPp {
     text-align: center;
     margin-top: 30px;
     font-size: larger;
+    cursor: pointer;
 }
 
 .heroBtnFlexPLink {
@@ -133,6 +136,7 @@
     border-radius: 27px;
     color: black;
     padding: 16px;
+    cursor: pointer;
 }
 
 .gridBtnList:hover {
@@ -156,7 +160,7 @@
     color: rgba(0, 0, 255, 0.742);
     border-radius: 25px;
     padding: 12px 25px;
-
+cursor: pointer;
 }
 
 .gridListBtn:hover {
@@ -174,6 +178,7 @@
     padding: 7px;
     margin-top: 40px;
     width: fit-content;
+    cursor: pointer;
 }
 
 .gridBtnList2:hover {
@@ -220,7 +225,7 @@
     padding: 14px;
     justify-content: space-between;
     background: #e1dad097;
-
+cursor: pointer;
 }
 
 .threeBtnGroupBtn:hover {
@@ -254,6 +259,7 @@
 .footerListLink {
     color: rgba(0, 0, 0, 0.399);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .footerListLink:hover {
